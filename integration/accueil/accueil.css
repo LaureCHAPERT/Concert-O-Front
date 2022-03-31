@@ -1,0 +1,17 @@
+body {
+  background-image: url("festival.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+#mainNav {
+  background-color: white;
+  opacity: 0.5;
+}
+.nav-item {
+  color: rgba(211, 14, 7, 0.904);
+}
+a{
+  color: red;
+}
