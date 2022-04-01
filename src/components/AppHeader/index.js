@@ -13,11 +13,14 @@ const AppHeader = () => (
       <Container>
         <Navbar.Brand href="#home"> <img src={logo} alt="logo" height="80" />
         </Navbar.Brand>
+        <h2 className="navbar-title">Concert'o</h2>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav " placement="right">
           <Nav className="me-auto">
-            <Nav.Link id="nav-link" href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link className="nav-link" href="#home">Accueil</Nav.Link>
+            <Nav.Link className="nav-link" href="#home">Genres</Nav.Link>
+            <Nav.Link className="nav-link" href="#home">Régions</Nav.Link>
+            <Nav.Link className="nav-link" href="#home">Tous les événements</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
