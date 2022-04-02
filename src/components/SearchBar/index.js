@@ -10,34 +10,33 @@ import {
 const AppHeader = () => (
   <div>
     <Container>
-      <Form>
+      <Form className="form">
         <Row>
           <Col sm>
             <Form.Group>
-              <Form.Label>Select Color : </Form.Label>
+              <Form.Label>Choisissez votre style musical : </Form.Label>
               <Form.Control as="select" custom>
-                <option value="red">Red</option>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
-                <option value="black">Black</option>
-                <option value="orange">Orange</option>
+                <option value="red">Folk</option>
+                <option value="blue">Rock</option>
+                <option value="green">Reggae</option>
+                <option value="black">Funk</option>
+                <option value="orange">Hip-hop</option>
               </Form.Control>
             </Form.Group>
           </Col>
           <Col sm>
             <Form.Group>
-              <Form.Label>Select Color : </Form.Label>
+              <Form.Label>Choisissez votre région : </Form.Label>
               <Form.Control as="select" custom>
-                <option value="red">Red</option>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
-                <option value="black">Black</option>
-                <option value="orange">Orange</option>
+                <option value="red">Occitanie</option>
+                <option value="blue">Provence Alpes Côte d'Azur</option>
               </Form.Control>
             </Form.Group>
           </Col>
+          <Col lg={2} className="pr-4">
+            <Button type="submit">Rechercher</Button>
+          </Col>
         </Row>
-        <Button type="submit">Submit form</Button>
       </Form>
     </Container>
   </div>
