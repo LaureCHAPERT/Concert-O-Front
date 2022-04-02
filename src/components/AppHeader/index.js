@@ -9,7 +9,7 @@ import logo from 'src/assets/images/logo.png';
 const AppHeader = () => (
   <div>
     <Navbar id="mainNav" expand="lg">
-      <Container>
+      <Container id="navbar-container">
         <Navbar.Brand href="#home"> <img src={logo} alt="logo" height="80" />
         </Navbar.Brand>
         <h2 className="navbar-title">Concert'o</h2>
