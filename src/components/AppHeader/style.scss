@@ -1,19 +1,20 @@
 @use 'src/styles/vars';
 #mainNav{
-  opacity: 50%;
+  opacity: 60%;
   background-color:white;
-}
-#navbar-container{
-  margin-left: 3em !important;
 }
 .navbar-title{
   color: vars.$fontColor !important;
   margin-right: 1em;
+
+  font-weight: bolder;
+  text-align: center;
 }
+
 .nav-link {
   color: vars.$fontColor !important;
   font-weight: bold;
   text-align: center;
-  margin-right: 2em;
-}
+  font-size: 1.1em;
 
+}

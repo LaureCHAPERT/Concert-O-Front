@@ -1,5 +1,12 @@
+import AppHeader from 'src/components/AppHeader';
+import SearchBar from 'src/components/SearchBar';
+
 const Home = () => (
-  console.log('composantHome')
+  <div>
+    <AppHeader />
+    <SearchBar />
+
+  </div>
 );
 
 export default Home;
