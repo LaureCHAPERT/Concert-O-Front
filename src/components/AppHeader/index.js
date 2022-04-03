@@ -15,7 +15,7 @@ const AppHeader = () => (
         <h2 className="navbar-title">Concert'o</h2>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav " placement="right">
-          <Nav>
+          <Nav className="flex-grow-1 justify-content-evenly">
             <Nav.Link href="#home">Accueil</Nav.Link>
             <Nav.Link href="#home">Genres</Nav.Link>
             <Nav.Link href="#home">Régions</Nav.Link>
