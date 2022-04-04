@@ -23,16 +23,16 @@ const AppHeader = () => (
         <Navbar.Collapse id="basic-navbar-nav " placement="right">
           <Nav className="flex-grow-1 justify-content-evenly">
             <LinkContainer to="/">
-              <Nav.Link>Accueil</Nav.Link>
+              <Nav.Link className="navlink-header">Accueil</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/genres">
-              <Nav.Link>Genres</Nav.Link>
+              <Nav.Link className="navlink-header">Genres</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/regions">
-              <Nav.Link>Regions</Nav.Link>
+              <Nav.Link className="navlink-header">Regions</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/events">
-              <Nav.Link>Tous les événements</Nav.Link>
+              <Nav.Link className="navlink-header">Tous les événements</Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>

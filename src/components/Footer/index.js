@@ -12,10 +12,10 @@ const Footer = () => (
       <Container id="navbar-container">
         <Nav className="flex-grow-1 justify-content-evenly">
           <LinkContainer to="/contact">
-            <Nav.Link>Contact</Nav.Link>
+            <Nav.Link className="navlink-footer">Contact</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/mentions-legales">
-            <Nav.Link>Mentions légales</Nav.Link>
+            <Nav.Link className="navlink-footer">Mentions légales</Nav.Link>
           </LinkContainer>
         </Nav>
       </Container>

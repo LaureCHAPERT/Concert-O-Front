@@ -2,11 +2,12 @@
 .card {
   background-color: vars.$backgroundColor !important;
   font-weight: bolder;
-  text-shadow: 0.25px 0.25px black;
   box-shadow: 2px 2px 0.5px rgba(128, 128, 128, 0.568);
   margin:3em;
+  color:black;
 }
 .card:hover{
-  border-radius: 1rem;
-  transform: scale(1.04);
+  transition: all 0.3s; 
+  border-radius: 2rem !important;
+  transform: scale(1.03);
 }

@@ -14,7 +14,7 @@ const Genres = () => (
   <div className="cardGrid">
     <Row>
       <Col className="d-flex justify-content-center">
-        <Card style={{ width: '17rem' }} href="#">
+        <Card className="categories-card" style={{ width: '17rem' }} href="#">
           <Card.Img variant="top" src={logo} />
           <Card.Body>
             <Card.Title>Titre</Card.Title>
@@ -22,7 +22,7 @@ const Genres = () => (
         </Card>
       </Col>
       <Col className="d-flex justify-content-center">
-        <Card style={{ width: '17rem' }} href="#">
+        <Card className="categories-card" style={{ width: '17rem' }} href="#">
           <Card.Img variant="top" src={logo} />
           <Card.Body>
             <Card.Title>Titre</Card.Title>
@@ -30,7 +30,7 @@ const Genres = () => (
         </Card>
       </Col>
       <Col className="d-flex justify-content-center">
-        <Card style={{ width: '17rem' }} href="#">
+        <Card className="categories-card" style={{ width: '17rem' }} href="#">
           <Card.Img variant="top" src={logo} />
           <Card.Body>
             <Card.Title>Titre</Card.Title>
@@ -38,7 +38,7 @@ const Genres = () => (
         </Card>
       </Col>
       <Col className="d-flex justify-content-center">
-        <Card style={{ width: '17rem' }} href="#">
+        <Card className="categories-card" style={{ width: '17rem' }} href="#">
           <Card.Img variant="top" src={logo} />
           <Card.Body>
             <Card.Title>Titre</Card.Title>
