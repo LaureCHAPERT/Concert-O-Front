@@ -1,19 +1,29 @@
 // import styles
 import './genres.scss';
 
-// import component(s)
-import FilterCard from 'src/components/FilterCard';
-
 // import react-Bootstrap's component(s)
 import {
-  CardGroup,
+  Row,
+  Col,
+  Card,
 } from 'react-bootstrap';
+import logo from 'src/assets/images/festival.jpg';
 
 const Genres = () => (
-  <div>
-    <CardGroup>
-      <FilterCard />
-    </CardGroup>
+
+  <div className="cardGrid">
+    <Row xs={1} md={2} lg={4} className="g-4">
+      {Array.from({ length: 8 }).map((_, idx) => (
+        <Col>
+          <Card style={{ width: '17rem' }} href="#">
+            <Card.Img variant="top" src={logo} />
+            <Card.Body>
+              <Card.Title>Titre</Card.Title>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
   </div>
 );
 

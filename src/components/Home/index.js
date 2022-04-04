@@ -10,15 +10,17 @@ import EventCard from '../EventCard';
 const Home = () => (
   <div>
     <SearchBar />
-    <Row>
-      <Col>
-        <CardGroup>
-          <EventCard />
-          <EventCard />
-          <EventCard />
-        </CardGroup>
-      </Col>
-    </Row>
+    <div className="list">
+      <Row className="g-4">
+        <Col className="d-flex justify-content-center">
+          <CardGroup>
+            <EventCard />
+            <EventCard />
+            <EventCard />
+          </CardGroup>
+        </Col>
+      </Row>
+    </div>
   </div>
 );
 
