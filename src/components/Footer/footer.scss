@@ -1,0 +1,11 @@
+@use 'src/styles/vars';
+
+.footer{
+  margin-top: 2em;
+}
+.navlink-footer{
+  color: vars.$fontColor !important;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1em;
+}
