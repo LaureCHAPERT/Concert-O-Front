@@ -3,7 +3,9 @@ import {
   CardGroup,
   Row,
   Col,
+  Nav,
 } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import SearchBar from 'src/components/SearchBar';
 import EventCard from '../EventCard';
 
@@ -11,12 +13,24 @@ const Home = () => (
   <div>
     <SearchBar />
     <div className="list">
-      <Row className="g-4">
-        <Col className="d-flex justify-content-center">
+      <Row className=" d-flex justify-content-center">
+        <Col>
           <CardGroup>
-            <EventCard />
-            <EventCard />
-            <EventCard />
+            <LinkContainer to="/contact">
+              <Nav.Link>
+                <EventCard />
+              </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/contact">
+              <Nav.Link>
+                <EventCard />
+              </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/contact">
+              <Nav.Link>
+                <EventCard />
+              </Nav.Link>
+            </LinkContainer>
           </CardGroup>
         </Col>
       </Row>

@@ -12,7 +12,7 @@ const AppHeader = () => (
   <div>
     <Navbar id="mainNav" expand="lg">
       <Container id="navbar-container">
-        <Navbar.Brand href="#home"> <img src={logo} alt="logo" height="80" />
+        <Navbar.Brand href="#home"> <img src={logo} alt="logo" height="60" />
         </Navbar.Brand>
         <LinkContainer to="/">
           <Nav.Link>
