@@ -1,17 +1,23 @@
-// == Import
+// == Import : yarn
+import { Route, Routes } from 'react-router-dom';
+
+// == Import components
 import Home from 'src/components/Home';
 import Footer from '../Footer';
 import AppHeader from '../AppHeader';
 import './app.scss';
 
-// == Composant
-const App = () => (
+// == Component
+const App = () => (      
   <div className="app">
     <AppHeader />
-    <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="regions" element={<Regions />} />
+        <Route path="genres" element={<Genres />} />
+      </Routes>
     <Footer />
   </div>
 );
-
 // == Export
 export default App;
