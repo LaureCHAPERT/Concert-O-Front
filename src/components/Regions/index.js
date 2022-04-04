@@ -1,3 +1,6 @@
+// import styles
+import './regions.scss';
+
 // import component(s)
 import FilterCard from 'src/components/FilterCard';
 

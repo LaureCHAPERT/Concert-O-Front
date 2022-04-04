@@ -1,3 +1,6 @@
+// import styles
+import './genres.scss';
+
 // import component(s)
 import FilterCard from 'src/components/FilterCard';
 

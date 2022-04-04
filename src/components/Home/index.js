@@ -1,6 +1,8 @@
 // import react-Bootstrap's component(s)
 import {
   CardGroup,
+  Row,
+  Col,
 } from 'react-bootstrap';
 import SearchBar from 'src/components/SearchBar';
 import EventCard from '../EventCard';
@@ -8,11 +10,15 @@ import EventCard from '../EventCard';
 const Home = () => (
   <div>
     <SearchBar />
-    <CardGroup>
-      <EventCard />
-      <EventCard />
-      <EventCard />
-    </CardGroup>
+    <Row>
+      <Col>
+        <CardGroup>
+          <EventCard />
+          <EventCard />
+          <EventCard />
+        </CardGroup>
+      </Col>
+    </Row>
   </div>
 );
 
