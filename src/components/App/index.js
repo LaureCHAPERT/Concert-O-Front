@@ -5,17 +5,19 @@ import { Route, Routes } from 'react-router-dom';
 import Home from 'src/components/Home';
 import Footer from '../Footer';
 import AppHeader from '../AppHeader';
+import Regions from '../Regions';
+import Genres from '../Genres';
 import './app.scss';
 
 // == Component
-const App = () => (      
+const App = () => (
   <div className="app">
     <AppHeader />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="regions" element={<Regions />} />
-        <Route path="genres" element={<Genres />} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/regions" element={<Regions />} />
+      <Route path="/genres" element={<Genres />} />
+    </Routes>
     <Footer />
   </div>
 );
