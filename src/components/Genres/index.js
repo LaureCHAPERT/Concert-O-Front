@@ -12,7 +12,7 @@ import logo from 'src/assets/images/festival.jpg';
 const Genres = () => (
 
   <div className="cardGrid">
-    <Row xs={1} md={2} lg={4} className="g-4">
+    <Row>
       <Col className="d-flex justify-content-center">
         <Card style={{ width: '17rem' }} href="#">
           <Card.Img variant="top" src={logo} />
