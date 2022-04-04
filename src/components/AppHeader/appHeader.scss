@@ -1,7 +1,8 @@
 @use 'src/styles/vars';
 
-#mainNav{
+.navbar{
   background-color: vars.$backgroundColor;
+  width: 100% !important; 
 }
 .navbar-title{
   color: vars.$fontColor !important;
@@ -17,6 +18,3 @@
   font-size: 1.1em;
 }
 
-.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
-    color:aqua;
-}
