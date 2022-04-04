@@ -14,7 +14,11 @@ const AppHeader = () => (
       <Container id="navbar-container">
         <Navbar.Brand href="#home"> <img src={logo} alt="logo" height="80" />
         </Navbar.Brand>
-        <h2 className="navbar-title">Concert'o</h2>
+        <LinkContainer to="/">
+          <Nav.Link>
+            <h2 className="navbar-title">Concert'o</h2>
+          </Nav.Link>
+        </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav " placement="right">
           <Nav className="flex-grow-1 justify-content-evenly">
