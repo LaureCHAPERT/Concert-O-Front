@@ -1,16 +1,15 @@
 // == Import
-import Event from 'src/components/Event';
-import EventsList from 'src/components/EventsList';
-import AppHeader from 'src/components/AppHeader';
+import Home from 'src/components/Home';
+import Footer from '../Footer';
+import AppHeader from '../AppHeader';
 import './app.scss';
 
 // == Composant
 const App = () => (
   <div className="app">
     <AppHeader />
-    <Event />
-    <EventsList />
-    <h1>Composant : App</h1>
+    <Home />
+    <Footer />
   </div>
 );
 

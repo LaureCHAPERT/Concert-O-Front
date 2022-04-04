@@ -1,5 +1,9 @@
+import SearchBar from 'src/components/SearchBar';
+
 const Home = () => (
-  console.log('composantHome')
+  <div>
+    <SearchBar />
+  </div>
 );
 
 export default Home;

@@ -1,4 +1,5 @@
 // == Import : npm
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { render } from 'react-dom';
 
 // == Import : local
