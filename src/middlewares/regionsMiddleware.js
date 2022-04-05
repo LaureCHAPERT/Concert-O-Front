@@ -8,7 +8,6 @@ const regionsMiddleware = (store) => (next) => (action) => {
       axios.get('http://localhost:3001/recipes')
         .then((response) => {
           store.dispatch(saveRegions(response.data));
-          console.log(response.data);
         })
         .catch((error) => {
           console.log(error);

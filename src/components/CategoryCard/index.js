@@ -8,9 +8,9 @@ import {
 } from 'react-bootstrap';
 
 // import styles
-import './categorieCard.scss';
+import './categoryCard.scss';
 
-const Regions = ({ title, thumbnail }) => (
+const CategoryCard = ({ title, thumbnail }) => (
 
   <Col className="d-flex justify-content-center">
     <Card className="categories-card" style={{ width: '17rem' }} href="#">
@@ -22,9 +22,9 @@ const Regions = ({ title, thumbnail }) => (
   </Col>
 
 );
-Regions.propTypes = {
+CategoryCard.propTypes = {
   title: PropTypes.string.isRequired,
   thumbnail: PropTypes.string.isRequired,
 };
 
-export default Regions;
+export default CategoryCard;

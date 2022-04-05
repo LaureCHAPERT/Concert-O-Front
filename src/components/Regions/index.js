@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap';
 
 // import component(s)
-import CategorieCard from 'src/components/CategorieCard';
+import CategoryCard from 'src/components/CategoryCard';
 
 // Import Action(s)
 import { fetchRegions } from '../../actions/regions';
@@ -17,17 +17,17 @@ import { fetchRegions } from '../../actions/regions';
 import './regions.scss';
 
 const Regions = () => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   // we retrieve the table of messages in the state
-  const categorieCard = useSelector((state) => state.regions);
+  const categoryCard = useSelector((state) => state.regions);
   useEffect(() => {
     dispatch(fetchRegions());
   }, []);
   return (
     <div className="cardGrid">
       <Row>
-        {categorieCard.map((item) => (
-          <CategorieCard key={item.id} {...item} />
+        {categoryCard.map((item) => (
+          <CategoryCard key={item.id} {...item} />
         ))}
       </Row>
     </div>

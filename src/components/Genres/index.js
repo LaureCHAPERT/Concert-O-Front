@@ -1,6 +1,6 @@
 // import styles
 import './genres.scss';
-import CategorieCard from 'src/components/CategorieCard';
+import CategoryCard from 'src/components/CategoryCard';
 // import react-Bootstrap's component(s)
 import {
   Row,
@@ -10,10 +10,10 @@ const Genres = () => (
 
   <div className="cardGrid">
     <Row>
-      <CategorieCard />
-      <CategorieCard />
-      <CategorieCard />
-      <CategorieCard />
+      <CategoryCard />
+      <CategoryCard />
+      <CategoryCard />
+      <CategoryCard />
     </Row>
   </div>
 );
