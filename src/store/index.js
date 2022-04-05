@@ -1,14 +1,15 @@
-import { createStore } from 'redux';
-
-import { devToolsEnhancer } from 'redux-devtools-extension';
+import { createStore, applyMiddleware, compose } from 'redux';
 
 import reducer from 'src/reducers/regionsReducer';
 
-const store = createStore(
-  // reducer
-  reducer,
-  // enhancer
-  devToolsEnhancer(),
+import regionsMiddleware from 'src/middlewares/regionsMiddleware';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const enhancers = composeEnhancers(
+  applyMiddleware(regionsMiddleware),
 );
+
+const store = createStore(reducer, enhancers);
 
 export default store;

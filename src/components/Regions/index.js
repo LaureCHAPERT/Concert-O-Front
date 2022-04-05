@@ -1,21 +1,37 @@
-// import styles
-import './regions.scss';
-import CategorieCard from 'src/components/CategorieCard';
+// Import
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 // import react-Bootstrap's component(s)
 import {
   Row,
 } from 'react-bootstrap';
 
-const Regions = () => (
+// import component(s)
+import CategorieCard from 'src/components/CategorieCard';
 
-  <div className="cardGrid">
-    <Row>
-      <CategorieCard />
-      <CategorieCard />
-      <CategorieCard />
-      <CategorieCard />
-    </Row>
-  </div>
-);
+// Import Action(s)
+import { fetchRegions } from '../../actions/regions';
+
+// import styles
+import './regions.scss';
+
+const Regions = () => {
+  const dispatch = useDispatch;
+  // we retrieve the table of messages in the state
+  const categorieCard = useSelector((state) => state.regions);
+  useEffect(() => {
+    dispatch(fetchRegions());
+  }, []);
+  return (
+    <div className="cardGrid">
+      <Row>
+        {categorieCard.map((item) => (
+          <CategorieCard key={item.id} {...item} />
+        ))}
+      </Row>
+    </div>
+  );
+};
 
 export default Regions;
