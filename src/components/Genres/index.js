@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 // import styles
 import './genres.scss';
 import CategorieCard from 'src/components/CategorieCard';
@@ -6,16 +7,16 @@ import {
   Row,
 } from 'react-bootstrap';
 
-const Genres = () => (
-
-  <div className="cardGrid">
-    <Row>
-      <CategorieCard />
-      <CategorieCard />
-      <CategorieCard />
-      <CategorieCard />
-    </Row>
-  </div>
-);
-
+const Genres = () => {
+  const genresList = useSelector((state) => state.genres);
+  return (
+    <div className="cardGrid">
+      <Row>
+        {genresList.map((item) => (
+          <CategorieCard key={item.id} {...item} />
+        ))}
+      </Row>
+    </div>
+  );
+};
 export default Genres;

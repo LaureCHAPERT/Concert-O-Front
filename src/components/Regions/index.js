@@ -1,10 +1,11 @@
-// import styles
-import './regions.scss';
-import CategorieCard from 'src/components/CategorieCard';
 // import react-Bootstrap's component(s)
 import {
   Row,
 } from 'react-bootstrap';
+
+import CategorieCard from 'src/components/CategorieCard';
+// import styles
+import './regions.scss';
 
 const Regions = () => (
 

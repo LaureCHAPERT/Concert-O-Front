@@ -8,6 +8,14 @@ const initialState = {
       id: 2,
       name: 'Occitanie',
     },
+    {
+      id: 3,
+      name: 'Bretagne',
+    },
+    {
+      id: 4,
+      name: 'Rhônes Alpes',
+    },
   ],
 };
 
