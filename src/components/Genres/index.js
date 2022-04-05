@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   Row,
 } from 'react-bootstrap';
-
+import { LinkContainer } from 'react-router-bootstrap';
 import CategorieCard from 'src/components/CategorieCard';
 
 import { fetchGenres } from '../../actions/genres';
@@ -19,13 +19,15 @@ const Genres = () => {
   }, []);
 
   return (
-    <div className="cardGrid">
-      <Row>
-        {genresList.map((item) => (
-          <CategorieCard key={item.id} {...item} />
-        ))}
-      </Row>
-    </div>
+    <LinkContainer to="contact">
+      <div className="cardGrid">
+        <Row>
+          {genresList.map((item) => (
+            <CategorieCard key={item.id} {...item} />
+          ))}
+        </Row>
+      </div>
+    </LinkContainer>
   );
 };
 export default Genres;

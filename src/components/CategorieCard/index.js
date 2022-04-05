@@ -5,15 +5,13 @@ import {
   Col,
   Card,
 } from 'react-bootstrap';
-import logo from 'src/assets/images/festival.jpg';
 // import styles
 import './categorieCard.scss';
 
-const CategorieCard = ({ title }) => (
-
+const CategorieCard = ({ title, thumbnail }) => (
   <Col className="d-flex justify-content-center">
     <Card className="categories-card" style={{ width: '17rem' }} href="#">
-      <Card.Img variant="top" src={logo} />
+      <Card.Img variant="top" src={thumbnail} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
       </Card.Body>
@@ -23,6 +21,7 @@ const CategorieCard = ({ title }) => (
 );
 CategorieCard.propTypes = {
   title: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired,
 };
 
 export default CategorieCard;
