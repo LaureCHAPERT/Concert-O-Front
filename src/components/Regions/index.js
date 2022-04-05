@@ -3,7 +3,7 @@ import {
   Row,
 } from 'react-bootstrap';
 
-import CategorieCard from 'src/components/CategorieCard';
+import CategoryCard from 'src/components/CategoryCard';
 // import styles
 import './regions.scss';
 
@@ -11,10 +11,7 @@ const Regions = () => (
 
   <div className="cardGrid">
     <Row>
-      <CategorieCard />
-      <CategorieCard />
-      <CategorieCard />
-      <CategorieCard />
+      <CategoryCard />
     </Row>
   </div>
 );

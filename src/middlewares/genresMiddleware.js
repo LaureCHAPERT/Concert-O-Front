@@ -11,7 +11,7 @@ const genresMiddleware = (store) => (next) => (action) => {
     case FETCH_GENRES:
       axios.get('http://localhost:3001/recipes')
         .then((response) => {
-          console.log(response);
+          console.log(response.data);
           store.dispatch(saveGenres(response.data));
         })
         .catch((error) => {

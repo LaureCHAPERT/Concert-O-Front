@@ -1,16 +1,9 @@
 @use 'src/styles/vars';
-.form{
-  margin:2em;
-  background-color: vars.$backgroundColor;
-  padding:1em;
-  border: 3px solid  rgba(0, 0, 0, 0.466);
-  border-radius: 20px;
-}
+
 .form-label{
   color: vars.$fontColor !important;
   font-weight: bolder;
-  font-size: 1.1em;
- 
+  font-size: 1.1em; 
 }
 .btn {
   margin-top:2.1em;
@@ -19,4 +12,19 @@
   font-size: 1.1em;
   border: 1px solid vars.$fontColor !important;
 
+}
+
+.homepage{
+  color: vars.$fontColor !important;
+  font-weight: bolder;
+  font-size:1.3em;
+  text-align: center;
+  padding-bottom: 1em;
+}
+.searchbarContainer{
+  margin:2em;
+  background-color: vars.$backgroundColor;
+  padding:1em;
+  border: 3px solid  rgba(0, 0, 0, 0.466);
+  border-radius: 20px;
 }

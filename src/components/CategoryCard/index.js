@@ -6,22 +6,24 @@ import {
   Card,
 } from 'react-bootstrap';
 // import styles
-import './categorieCard.scss';
+import './categoryCard.scss';
 
-const CategorieCard = ({ title, thumbnail }) => (
+const CategoryCard = ({ title, thumbnail }) => (
   <Col className="d-flex justify-content-center">
     <Card className="categories-card" style={{ width: '17rem' }} href="#">
-      <Card.Img variant="top" src={thumbnail} />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-      </Card.Body>
+      <div>
+        <Card.Img variant="top" src={thumbnail} />
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+        </Card.Body>
+      </div>
     </Card>
   </Col>
 
 );
-CategorieCard.propTypes = {
+CategoryCard.propTypes = {
   title: PropTypes.string.isRequired,
   thumbnail: PropTypes.string.isRequired,
 };
 
-export default CategorieCard;
+export default CategoryCard;

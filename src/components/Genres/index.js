@@ -5,7 +5,7 @@ import {
   Row,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import CategorieCard from 'src/components/CategorieCard';
+import CategoryCard from 'src/components/CategoryCard';
 
 import { fetchGenres } from '../../actions/genres';
 // import styles
@@ -19,11 +19,11 @@ const Genres = () => {
   }, []);
 
   return (
-    <LinkContainer to="contact">
+    <LinkContainer to="contact" style={{ cursor: 'pointer' }}>
       <div className="cardGrid">
         <Row>
           {genresList.map((item) => (
-            <CategorieCard key={item.id} {...item} />
+            <CategoryCard key={item.id} {...item} />
           ))}
         </Row>
       </div>
