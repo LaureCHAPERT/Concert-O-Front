@@ -1,26 +1,23 @@
+import { SAVE_GENRES } from '../actions/genres';
+
 const initialState = {
-  genres: [
-    {
-      id: 1,
-      name: 'PACA',
-    },
-    {
-      id: 2,
-      name: 'Occitanie',
-    },
-    {
-      id: 3,
-      name: 'Bretagne',
-    },
-    {
-      id: 4,
-      name: 'Rhônes Alpes',
-    },
-  ],
+  genresList: [],
 };
 
 const genresReducer = (state = initialState, action = {}) => {
+  console.log(`le reducer a reçu une action ${action.type}`);
   switch (action.type) {
+    case SAVE_GENRES:
+      /*
+      - on crée un nouvel objet : {}
+      - on déverse dedans toutes les informations du state actuel : ...state
+      - on écrase une valeur qui provenait du state actuel
+      */
+      return {
+        ...state, // list: state.list
+        genresList: action.genres,
+      };
+
     default:
       return state;
   }

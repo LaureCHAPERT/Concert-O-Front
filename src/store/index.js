@@ -1,14 +1,19 @@
-import { createStore } from 'redux';
-
-import { devToolsEnhancer } from 'redux-devtools-extension';
+import { createStore, applyMiddleware, compose } from 'redux';
 
 import reducer from 'src/reducers/genresReducer';
+import genresMiddleware from '../middlewares/genresMiddleware';
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const enhancers = composeEnhancers(
+  applyMiddleware(
+    genresMiddleware,
+  ),
+);
 const store = createStore(
   // reducer
   reducer,
   // enhancer
-  devToolsEnhancer(),
+  enhancers,
 );
 
 export default store;
