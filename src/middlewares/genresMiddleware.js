@@ -9,8 +9,9 @@ const genresMiddleware = (store) => (next) => (action) => {
 
   switch (action.type) {
     case FETCH_GENRES:
-      axios.get('http://api.music-story.com/fr/genre/1/genres')
+      axios.get('http://localhost:3001/recipes')
         .then((response) => {
+          console.log(response);
           store.dispatch(saveGenres(response.data));
         })
         .catch((error) => {

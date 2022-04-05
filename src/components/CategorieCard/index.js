@@ -9,20 +9,20 @@ import logo from 'src/assets/images/festival.jpg';
 // import styles
 import './categorieCard.scss';
 
-const CategorieCard = ({ name }) => (
+const CategorieCard = ({ title }) => (
 
   <Col className="d-flex justify-content-center">
     <Card className="categories-card" style={{ width: '17rem' }} href="#">
       <Card.Img variant="top" src={logo} />
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title>{title}</Card.Title>
       </Card.Body>
     </Card>
   </Col>
 
 );
 CategorieCard.propTypes = {
-  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default CategorieCard;
