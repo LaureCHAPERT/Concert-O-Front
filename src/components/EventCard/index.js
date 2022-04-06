@@ -6,7 +6,7 @@ import {
 import { LinkContainer } from 'react-router-bootstrap';
 
 const EventCard = () => (
-  <LinkContainer to="/contact">
+  <LinkContainer to="/detail">
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
