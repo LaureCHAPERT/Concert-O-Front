@@ -19,14 +19,16 @@ import './regions.scss';
 const Regions = () => {
   const dispatch = useDispatch();
   // we retrieve the table of messages in the state
-  const categoryCard = useSelector((state) => state.regions.regionsList);
+  const { regionsList } = useSelector((state) => state.regions);
+
   useEffect(() => {
     dispatch(fetchRegions());
   }, []);
+
   return (
     <div className="cardGrid">
       <Row>
-        {categoryCard.map((item) => (
+        {regionsList.map((item) => (
           <CategoryCard key={item.id} {...item} />
         ))}
       </Row>

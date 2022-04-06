@@ -1,21 +1,20 @@
-// import actions
-import { SAVE_REGIONS } from '../actions/regions';
+import { SAVE_EVENTS_BY_GENRE } from '../actions/events';
 
 const initialState = {
-  regionsList: [],
-  regionName: '',
+  eventsList: [],
 };
-const regions = (state = initialState, action = {}) => {
+
+const events = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SAVE_REGIONS:
+    case SAVE_EVENTS_BY_GENRE:
       /*
       - on crée un nouvel objet : {}
       - on déverse dedans toutes les informations du state actuel : ...state
       - on écrase une valeur qui provenait du state actuel
       */
       return {
-        ...state, // regions: state.regions
-        regionsList: action.regions,
+        ...state, // list: state.list
+        eventsList: action.data.events,
       };
 
     default:
@@ -23,4 +22,4 @@ const regions = (state = initialState, action = {}) => {
   }
 };
 
-export default regions;
+export default events;

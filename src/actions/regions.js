@@ -7,7 +7,9 @@ export const fetchRegions = () => ({
   type: FETCH_REGIONS,
 });
 
-export const saveRegions = (regions) => ({
-  type: SAVE_REGIONS,
-  regions: regions,
-});
+export const saveRegions = (regions) => (
+  {
+    type: SAVE_REGIONS,
+    regions: regions,
+  }
+);
