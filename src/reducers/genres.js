@@ -1,10 +1,10 @@
 import { SAVE_GENRES } from '../actions/genres';
 
 const initialState = {
-  genresList: [],
+  genres: [],
 };
 
-const genresReducer = (state = initialState, action = {}) => {
+const reducer = (state = initialState, action = {}) => {
   console.log(`le reducer a reçu une action ${action.type}`);
   switch (action.type) {
     case SAVE_GENRES:
@@ -15,7 +15,7 @@ const genresReducer = (state = initialState, action = {}) => {
       */
       return {
         ...state, // list: state.list
-        genresList: action.genres,
+        genres: action.genres,
       };
 
     default:
@@ -23,4 +23,4 @@ const genresReducer = (state = initialState, action = {}) => {
   }
 };
 
-export default genresReducer;
+export default reducer;

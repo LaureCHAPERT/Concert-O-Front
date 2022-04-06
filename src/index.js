@@ -2,17 +2,17 @@
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import store from 'src/store';
 
 // == Import : local
-// Composants
+// Components
 import App from 'src/components/App';
-// Css de bootstrap
+import store from 'src/store';
+// bootstrap's Css
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // == Render
-// 1. Élément React racine (celui qui contient l'ensemble de l'app)
-//    => crée une structure d'objets imbriqués (DOM virtuel)
+// 1. Root React element (the one that contains the entire app)
+// => Creates Nested Object Structure (Virtual DOM)
 const rootReactElement = (
   <Provider store={store}>
     <BrowserRouter>
@@ -20,7 +20,7 @@ const rootReactElement = (
     </BrowserRouter>
   </Provider>
 );
-// 2. La cible du DOM (là où la structure doit prendre vie dans le DOM)
+// 2. The target of the DOM (where the structure is to come to life in the DOM)
 const target = document.getElementById('root');
-// 3. Déclenchement du rendu de React (virtuel) => DOM (page web)
+// 3. Trigger React (virtual) rendering =dom > (web page)
 ReactDom.render(rootReactElement, target);
