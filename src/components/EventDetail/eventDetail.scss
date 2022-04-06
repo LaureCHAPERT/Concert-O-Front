@@ -1,0 +1,8 @@
+@use 'src/styles/vars';
+
+h2{
+  color: vars.$fontColor
+}
+#eventDetail{
+  background-color: vars.$backgroundColor;
+}
