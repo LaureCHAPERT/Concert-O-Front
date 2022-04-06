@@ -13,7 +13,7 @@ import './genres.scss';
 
 const Genres = () => {
   const dispatch = useDispatch();
-  const genresList = useSelector((state) => state.genresList);
+  const genresList = useSelector((state) => state.genres.genres);
   useEffect(() => {
     dispatch(fetchGenres());
   }, []);

@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import genresReducer from './genres';
-import regionsReducer from './regions';
+import genres from './genres';
+import regions from './regions';
 
-const rootReducer = combineReducers({
-  genres: genresReducer,
-  regions: regionsReducer,
+const reducer = combineReducers({
+  genres: genres,
+  regions: regions,
 });
 
-export default rootReducer;
+export default reducer;

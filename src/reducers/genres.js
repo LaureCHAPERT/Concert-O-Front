@@ -4,7 +4,7 @@ const initialState = {
   genres: [],
 };
 
-const reducer = (state = initialState, action = {}) => {
+const genres = (state = initialState, action = {}) => {
   console.log(`le reducer a reçu une action ${action.type}`);
   switch (action.type) {
     case SAVE_GENRES:
@@ -23,4 +23,4 @@ const reducer = (state = initialState, action = {}) => {
   }
 };
 
-export default reducer;
+export default genres;

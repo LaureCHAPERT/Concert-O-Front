@@ -19,7 +19,7 @@ import './regions.scss';
 const Regions = () => {
   const dispatch = useDispatch();
   // we retrieve the table of messages in the state
-  const categoryCard = useSelector((state) => state.regions);
+  const categoryCard = useSelector((state) => state.regions.regions);
   useEffect(() => {
     dispatch(fetchRegions());
   }, []);

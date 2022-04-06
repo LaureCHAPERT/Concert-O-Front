@@ -4,7 +4,7 @@ import { SAVE_REGIONS } from '../actions/regions';
 const initialState = {
   regions: [],
 };
-const reducer = (state = initialState, action = {}) => {
+const regions = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_REGIONS:
       /*
@@ -22,4 +22,4 @@ const reducer = (state = initialState, action = {}) => {
   }
 };
 
-export default reducer;
+export default regions;
