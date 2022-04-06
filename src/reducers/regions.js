@@ -2,7 +2,7 @@
 import { SAVE_REGIONS } from '../actions/regions';
 
 const initialState = {
-  regions: [],
+  regionsList: [],
 };
 const regions = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -14,7 +14,7 @@ const regions = (state = initialState, action = {}) => {
       */
       return {
         ...state, // regions: state.regions
-        regions: action.regions,
+        regionsList: action.regions,
       };
 
     default:

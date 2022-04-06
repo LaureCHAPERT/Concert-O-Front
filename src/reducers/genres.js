@@ -1,7 +1,7 @@
 import { SAVE_GENRES } from '../actions/genres';
 
 const initialState = {
-  genres: [],
+  genresList: [],
 };
 
 const genres = (state = initialState, action = {}) => {
@@ -15,7 +15,7 @@ const genres = (state = initialState, action = {}) => {
       */
       return {
         ...state, // list: state.list
-        genres: action.genres,
+        genresList: action.genres,
       };
 
     default:
