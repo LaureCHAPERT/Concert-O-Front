@@ -9,7 +9,7 @@ const genresMiddleware = (store) => (next) => (action) => {
 
   switch (action.type) {
     case FETCH_GENRES:
-      axios.get('http://localhost:3001/recipes')
+      axios.get('http://jeremy-bruguier.vpnuser.lan:8080/api/genre')
         .then((response) => {
           console.log(response.data);
           store.dispatch(saveGenres(response.data));
