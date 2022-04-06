@@ -11,7 +11,7 @@ const AppHeader = () => (
   <div>
     <Container className="searchbarContainer">
       <div className="background-title">
-        <h1 className="homepage">Je suis peut-être un H1 inutile....</h1>
+        <h1 className="homepage">Bienvenue</h1>
       </div>
       <Form className="form">
         <Row>

@@ -10,6 +10,7 @@ import Genres from '../Genres';
 import EventDetail from '../EventDetail';
 
 import './app.scss';
+import EventsList from '../EventsList';
 
 // == Component
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
       <Route path="/regions" element={<Regions />} />
       <Route path="/genres" element={<Genres />} />
       <Route path="/detail" element={<EventDetail />} />
+      <Route path="/evenements" element={<EventsList />} />
     </Routes>
     <Footer />
   </div>

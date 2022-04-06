@@ -8,11 +8,11 @@ import {
 // import styles
 import './categoryCard.scss';
 
-const CategoryCard = ({ title, thumbnail }) => (
+const CategoryCard = ({ title, image }) => (
   <Col className="d-flex justify-content-center">
     <Card className="categories-card" style={{ width: '17rem' }} href="#">
       <div>
-        <Card.Img variant="top" src={thumbnail} />
+        <Card.Img variant="top" src={image} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
         </Card.Body>
@@ -23,7 +23,7 @@ const CategoryCard = ({ title, thumbnail }) => (
 );
 CategoryCard.propTypes = {
   title: PropTypes.string.isRequired,
-  thumbnail: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default CategoryCard;
