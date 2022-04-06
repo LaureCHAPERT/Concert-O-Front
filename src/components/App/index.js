@@ -7,6 +7,8 @@ import Footer from '../Footer';
 import AppHeader from '../AppHeader';
 import Regions from '../Regions';
 import Genres from '../Genres';
+import EventDetail from '../EventDetail';
+
 import './app.scss';
 
 // == Component
@@ -17,6 +19,7 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/regions" element={<Regions />} />
       <Route path="/genres" element={<Genres />} />
+      <Route path="/detail" element={<EventDetail />} />
     </Routes>
     <Footer />
   </div>
