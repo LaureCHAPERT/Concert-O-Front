@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap';
 
 const EventDetail = () => {
-  const { eventDetail } = useSelector((state) => { console.log('STATE =>', state); return state.events; });
+  const { eventDetail } = useSelector((state) => state.events);
 
   return (
 

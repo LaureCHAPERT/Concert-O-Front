@@ -28,7 +28,7 @@ const Regions = () => {
     <div className="cardGrid">
       <Row>
         {regionsList.map((item) => (
-          <CategoryCard key={item.id} {...item} />
+          <CategoryCard key={item.id} {...item} filterType="region" />
         ))}
       </Row>
     </div>

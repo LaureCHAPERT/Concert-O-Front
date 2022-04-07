@@ -9,8 +9,42 @@ import { fetchEventsByGenre } from '../../actions/events';
 // import styles
 import './categoryCard.scss';
 
+// const fetchEvents = ({ regionId, genreId }) => {
+//   let url;
+//   if (regionId && genreId) {
+//     url = '/${regionId}/${genreId}';
+//   } else if (regionId) {
+//     url = '/${regionId}/';
+//   } else if (genreId) {
+//     url = '/${genreId}/';
+//   } else {
+//     console.log('MISSING PARAM');
+//   }
+// }
+
 const CategoryCard = ({ name, image, id }) => {
   const dispatch = useDispatch();
+
+  /* let callback;
+  switch(filterType) {
+    case 'region':
+      callback = dispatch(fetchEventsByRegion(id));
+      break;
+    case 'genre':
+      callback = dispatch(fetchEventsByGenre(id));
+      break;
+  } */
+  // let fetchPayload;
+
+  // switch(filterType) {
+  //   case 'region':
+  //     fetchPayload = { regionId: id, genreId: null};
+  //     break;
+  //   case 'genre':
+  //     fetchPayload = { regionId: null, genreId: id};
+  //     break;
+  // };
+
   return (
     <Col className="d-flex justify-content-center" onClick={() => dispatch(fetchEventsByGenre(id))}>
       <Card className="categories-card" style={{ width: '17rem' }} href="#">
