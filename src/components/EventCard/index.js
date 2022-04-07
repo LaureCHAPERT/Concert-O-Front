@@ -3,22 +3,25 @@ import './eventCard.scss';
 import {
   Card,
   Button,
+  Col,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 const EventCard = ({ name, description, image }) => (
-  <LinkContainer to="/detail">
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={image} />
-      <Card.Body>
-        <Card.Title>{name} </Card.Title>
-        <Card.Text>
-          {description}
-        </Card.Text>
-        <Button variant="primary stretched-link">Voir le détail</Button>
-      </Card.Body>
-    </Card>
-  </LinkContainer>
+  <Col className="d-flex justify-content-center">
+    <LinkContainer to="/detail">
+      <Card>
+        <Card.Img className="events-img" variant="top" src={image} />
+        <Card.Body>
+          <Card.Title>{name} </Card.Title>
+          <Card.Text>
+            {description}
+          </Card.Text>
+          <Button variant="primary stretched-link">Voir le détail</Button>
+        </Card.Body>
+      </Card>
+    </LinkContainer>
+  </Col>
 );
 EventCard.propTypes = {
   name: PropTypes.string.isRequired,

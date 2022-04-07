@@ -7,7 +7,7 @@ import {
 import SearchBar from 'src/components/SearchBar';
 import EventCard from '../EventCard';
 
-import './home.scss';
+import './home.scss'; 
 
 const Home = () => (
   <div>

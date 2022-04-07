@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import {
   CardGroup,
   Row,
-  Col,
 } from 'react-bootstrap';
 import SearchBar from 'src/components/SearchBar';
 import EventCard from '../EventCard';
@@ -15,17 +14,11 @@ const EventsList = () => {
   return (
     <div>
       <SearchBar />
-      <div className="list">
-        <Row className=" d-flex justify-content-center">
-          <Col>
-            <CardGroup>
-              {eventsList.map((item) => (
-                <EventCard key={item.id} {...item} />
-              ))}
-            </CardGroup>
-          </Col>
-        </Row>
-      </div>
+      <Row>
+        {eventsList.map((item) => (
+          <EventCard key={item.id} {...item} />
+        ))}
+      </Row>
     </div>
   );
 };

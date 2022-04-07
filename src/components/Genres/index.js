@@ -20,13 +20,11 @@ const Genres = () => {
 
   return (
     <LinkContainer to="/evenements" style={{ cursor: 'pointer' }}>
-      <div className="cardGrid">
-        <Row>
-          {genresList.map((item) => (
-            <CategoryCard key={item.id} {...item} />
-          ))}
-        </Row>
-      </div>
+      <Row>
+        {genresList.map((item) => (
+          <CategoryCard key={item.id} {...item} />
+        ))}
+      </Row>
     </LinkContainer>
   );
 };
