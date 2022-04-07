@@ -1,23 +1,26 @@
+import { useSelector } from 'react-redux';
 import './eventDetail.scss';
-import image from 'src/assets/images/festival.jpg';
 import {
   Container,
   Image,
   Badge,
 } from 'react-bootstrap';
 
-const EventDetail = () => (
-  <Container id="eventDetail" fluid>
-    <Image variant="top" src={image} alt="evenement" height="100" />
-    <h2 className="title">Titre  </h2>
-    <Badge bg="secondary">Tag région</Badge>
-    <Badge bg="secondary">Tag genre</Badge>
-    <div className="price">Prix €</div>
-    <div className="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident temporibus facere minus ea recusandae voluptatum totam ullam accusamus delectus. Reiciendis autem labore neque ad, facilis officiis deleniti expedita debitis modi rem eligendi totam a eos mollitia explicabo corporis libero earum repellendus magni laudantium quisquam, fuga ut. Ex, fugit reprehenderit? Laboriosam optio esse, architecto aliquid delectus atque temporibus amet itaque numquam veritatis pariatur ipsa animi aliquam ullam. Eius obcaecati dolorum saepe blanditiis, quae autem dignissimos possimus tempore. Distinctio quasi aspernatur ipsam perspiciatis autem quae error molestiae, consequatur quas! Excepturi pariatur fugiat architecto, accusamus illum ut amet soluta perferendis sapiente, nesciunt omnis?</div>
-    <a href="#">Region</a>
-    <a href="#">Billeterie</a>
+const EventDetail = () => {
+  const { eventDetail } = useSelector((state) => { console.log('STATE =>', state); return state.events; });
 
-  </Container>
-);
+  return (
 
+    <Container id="eventDetail">
+      <Image variant="top" src={eventDetail.image} />
+      <h2 className="title">{eventDetail.name} </h2>
+      <Badge bg="secondary">region</Badge>
+      <Badge bg="secondary">{eventDetail.genres[0].name}</Badge>
+      <div className="price">{eventDetail.price}€</div>
+      <div className="description">{eventDetail.description}</div>
+      <a href="#">{eventDetail.linkTicketing}</a>
+    </Container>
+
+  );
+};
 export default EventDetail;

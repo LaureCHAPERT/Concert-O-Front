@@ -20,7 +20,6 @@ const Regions = () => {
   const dispatch = useDispatch();
   // we retrieve the table of messages in the state
   const { regionsList } = useSelector((state) => state.regions);
-
   useEffect(() => {
     dispatch(fetchRegions());
   }, []);

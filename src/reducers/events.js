@@ -1,7 +1,20 @@
-import { SAVE_EVENTS_BY_GENRE } from '../actions/events';
+import { SAVE_EVENTS_BY_GENRE, SAVE_DETAIL_EVENT } from '../actions/events';
 
 const initialState = {
   eventsList: [],
+  eventDetail: {
+    name: '',
+    image: '',
+    description: '',
+    region: {},
+    genres: [
+      {
+        name: '',
+      },
+    ],
+    price: 0,
+    linkTicketing: '',
+  },
 };
 
 const events = (state = initialState, action = {}) => {
@@ -16,7 +29,11 @@ const events = (state = initialState, action = {}) => {
         ...state, // list: state.list
         eventsList: action.data.events,
       };
-
+    case SAVE_DETAIL_EVENT:
+      return {
+        ...state,
+        eventDetail: action.data,
+      };
     default:
       return state;
   }
