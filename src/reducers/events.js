@@ -1,13 +1,18 @@
 // import actions
-import { FETCH_EVENTS_BY_REGION } from '../actions/events';
+import { SAVE_EVENTS_BY_REGION } from '../actions/events';
 
 const initialState = {
-  regionsList: [],
+  eventsList: [],
 };
-const regions = (state = initialState, action = {}) => {
+
+const events = (state = initialState, action = {}) => {
+  console.log(`the events reducer received an action ${action.type}`);
   switch (action.type) {
-    case FETCH_EVENTS_BY_REGION:
+    case SAVE_EVENTS_BY_REGION:
+      // console.log(initialState);
       return {
+        ...state,
+        eventsList: action.data.events,
       };
 
     default:
@@ -15,4 +20,4 @@ const regions = (state = initialState, action = {}) => {
   }
 };
 
-export default regions;
+export default events;
