@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 // import react-Bootstrap's component(s)
 import {
   CardGroup,
@@ -10,22 +11,23 @@ import EventCard from '../EventCard';
 import './eventsList.scss';
 
 const EventsList = () => {
-  return(
+  const { eventsList } = useSelector((state) => state.events);
+  return (
     <div>
       <SearchBar />
       <div className="list">
         <Row className=" d-flex justify-content-center">
           <Col>
             <CardGroup>
-              <EventCard />
-              <EventCard />
-              <EventCard />
+              {eventsList.map((item) => (
+                <EventCard key={item.id} {...item} />
+              ))}
             </CardGroup>
           </Col>
         </Row>
       </div>
     </div>
-  )
+  );
 };
 
 export default EventsList;
