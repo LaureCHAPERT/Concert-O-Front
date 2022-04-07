@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 // import react-Bootstrap's component(s)
 import {
-  CardGroup,
   Row,
 } from 'react-bootstrap';
 import SearchBar from 'src/components/SearchBar';
