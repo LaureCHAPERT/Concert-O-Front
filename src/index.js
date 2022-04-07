@@ -7,7 +7,8 @@ import { BrowserRouter } from 'react-router-dom';
 // Components
 import App from 'src/components/App';
 import store from 'src/store';
-// bootstrap's Css
+
+// Bootstrap's Css
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // == Render

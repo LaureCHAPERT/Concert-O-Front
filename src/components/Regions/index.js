@@ -24,7 +24,7 @@ const Regions = () => {
   useEffect(() => {
     dispatch(fetchRegions());
   }, []);
-
+  // empty array with useEffect : acts like componentDidMount and only runs once
   return (
     <div className="cardGrid">
       <Row>

@@ -17,7 +17,7 @@ const Genres = () => {
   useEffect(() => {
     dispatch(fetchGenres());
   }, []);
-
+  // empty array with useEffect : acts like componentDidMount and only runs once
   return (
     <LinkContainer to="/evenements" style={{ cursor: 'pointer' }}>
       <Row>
