@@ -8,9 +8,9 @@ import AppHeader from '../AppHeader';
 import Regions from '../Regions';
 import Genres from '../Genres';
 import EventDetail from '../EventDetail';
+import EventsList from '../EventsList';
 
 import './app.scss';
-import EventsList from '../EventsList';
 
 // == Component
 const App = () => (

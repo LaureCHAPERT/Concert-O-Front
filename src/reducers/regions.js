@@ -5,13 +5,15 @@ const initialState = {
   regionsList: [],
   regionName: '',
 };
+
 const regions = (state = initialState, action = {}) => {
+  // console.log(`the regions reducer received an action ${action.type}`);
   switch (action.type) {
     case SAVE_REGIONS:
       /*
-      - on crée un nouvel objet : {}
-      - on déverse dedans toutes les informations du state actuel : ...state
-      - on écrase une valeur qui provenait du state actuel
+      - creating a new object: {}
+      - dumping all the information of the current state into it: ...state
+      - overwriting value from the current state
       */
       return {
         ...state, // regions: state.regions

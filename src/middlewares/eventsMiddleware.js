@@ -6,6 +6,8 @@ import {
   saveDetailEvent,
   FETCH_EVENTS_ON_HOMEPAGE,
   saveEventsOnHomepage,
+  FETCH_EVENTS_BY_REGION,
+  saveEventsByRegion,
 } from '../actions/events';
 
 const eventsMiddleware = (store) => (next) => (action) => {
@@ -38,6 +40,17 @@ const eventsMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log(response.data);
           store.dispatch(saveEventsOnHomepage(response.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case FETCH_EVENTS_BY_REGION:
+      // We send request to the API in order to get an event list filtered by genres
+      axios.get(`http://jeremy-bruguier.vpnuser.lan:8080/api/region/${action.id}/events`)
+        .then((response) => {
+          console.log('response', response.data.events);
+          store.dispatch(saveEventsByRegion(response.data));
         })
         .catch((error) => {
           console.log(error);

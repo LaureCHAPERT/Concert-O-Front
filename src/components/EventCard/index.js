@@ -34,18 +34,11 @@ const EventCard = ({
   );
 };
 
-EventCard.defaultProps = {
-  name: '',
-  image: '',
-  description: '',
-  id: 0,
-};
-
 EventCard.propTypes = {
-  name: PropTypes.string,
-  image: PropTypes.string,
-  description: PropTypes.string,
-  id: PropTypes.number,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  description: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default EventCard;

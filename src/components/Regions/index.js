@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   Row,
 } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 // import component(s)
 import CategoryCard from 'src/components/CategoryCard';
@@ -25,13 +26,13 @@ const Regions = () => {
   }, []);
   // empty array with useEffect : acts like componentDidMount and only runs once
   return (
-    <div className="cardGrid">
+    <LinkContainer to="/evenements" style={{ cursor: 'pointer' }}>
       <Row>
         {regionsList.map((item) => (
           <CategoryCard key={item.id} {...item} filterType="region" />
         ))}
       </Row>
-    </div>
+    </LinkContainer>
   );
 };
 

@@ -2,6 +2,7 @@ import {
   SAVE_EVENTS_BY_GENRE,
   SAVE_DETAIL_EVENT,
   SAVE_EVENTS_ON_HOMEPAGE,
+  SAVE_EVENTS_BY_REGION,
 } from '../actions/events';
 
 const initialState = {
@@ -24,13 +25,14 @@ const initialState = {
 };
 
 const events = (state = initialState, action = {}) => {
+  // console.log(`the events reducer received an action ${action.type}`);
   switch (action.type) {
     case SAVE_EVENTS_BY_GENRE:
-      /*
-      - on crée un nouvel objet : {}
-      - on déverse dedans toutes les informations du state actuel : ...state
-      - on écrase une valeur qui provenait du state actuel
-      */
+      return {
+        ...state, // list: state.list
+        eventsList: action.data.events,
+      };
+    case SAVE_EVENTS_BY_REGION:
       return {
         ...state, // list: state.list
         eventsList: action.data.events,

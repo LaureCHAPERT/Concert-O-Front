@@ -5,7 +5,7 @@ import {
   Col,
   Card,
 } from 'react-bootstrap';
-import { fetchEventsByGenre } from '../../actions/events';
+import { fetchEventsByGenre, fetchEventsByRegion } from '../../actions/events';
 // import styles
 import './categoryCard.scss';
 
@@ -23,18 +23,25 @@ import './categoryCard.scss';
 //   }
 // }
 
-const CategoryCard = ({ name, image, id }) => {
+const CategoryCard = ({
+  name,
+  image,
+  id,
+  filterType,
+}) => {
   const dispatch = useDispatch();
 
-  /* let callback;
-  switch(filterType) {
+  let callback;
+  switch (filterType) {
     case 'region':
       callback = dispatch(fetchEventsByRegion(id));
       break;
     case 'genre':
       callback = dispatch(fetchEventsByGenre(id));
       break;
-  } */
+    default:
+      console.log('erreur');
+  }
   // let fetchPayload;
 
   // switch(filterType) {
@@ -47,8 +54,8 @@ const CategoryCard = ({ name, image, id }) => {
   // };
 
   return (
-    <Col className="d-flex justify-content-center">
-      <Card className="categories-card" style={{ width: '17rem' }} href="#" onClick={() => dispatch(fetchEventsByGenre(id))}>
+    <Col xs={12} md={4} className="d-flex justify-content-center">
+      <Card className="categories-card" style={{ width: '17rem' }} href="#" onClick={() => dispatch(callback(id))}>
         <div>
           <Card.Img variant="top" src={image} />
           <Card.Body>
@@ -60,9 +67,10 @@ const CategoryCard = ({ name, image, id }) => {
   );
 };
 CategoryCard.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  filterType: PropTypes.string.isRequired,
 };
 
 export default CategoryCard;
