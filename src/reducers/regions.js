@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const regions = (state = initialState, action = {}) => {
-  console.log(`the regions reducer received an action ${action.type}`);
+  // console.log(`the regions reducer received an action ${action.type}`);
   switch (action.type) {
     case SAVE_REGIONS:
       /*

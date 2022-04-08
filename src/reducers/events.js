@@ -6,15 +6,18 @@ const initialState = {
 };
 
 const events = (state = initialState, action = {}) => {
-  console.log(`the events reducer received an action ${action.type}`);
+  // console.log(`the events reducer received an action ${action.type}`);
   switch (action.type) {
     case SAVE_EVENTS_BY_REGION:
-      // console.log(initialState);
+      /*
+      - on crée un nouvel objet : {}
+      - on déverse dedans toutes les informations du state actuel : ...state
+      - on écrase une valeur qui provenait du state actuel
+      */
       return {
-        ...state,
-        eventsList: action.data.events,
+        ...state, // list: state.list
+        eventsList: action.data,
       };
-
     default:
       return state;
   }

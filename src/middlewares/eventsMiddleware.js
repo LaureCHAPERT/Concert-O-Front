@@ -10,7 +10,7 @@ const eventsMiddleware = (store) => (next) => (action) => {
       // We send request to the API in order to get an event list filtered by genres
       axios.get(`http://jeremy-bruguier.vpnuser.lan:8080/api/region/${action.id}/events`)
         .then((response) => {
-          console.log('response', response.data);
+          console.log('response', response.data.events);
           store.dispatch(saveEventsByRegion(response.data));
         })
         .catch((error) => {

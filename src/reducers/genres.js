@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const genres = (state = initialState, action = {}) => {
-  console.log(`le reducer a reçu une action ${action.type}`);
+  // console.log(`le reducer a reçu une action ${action.type}`);
   switch (action.type) {
     case SAVE_GENRES:
       /*
