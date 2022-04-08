@@ -14,9 +14,10 @@ const events = (state = initialState, action = {}) => {
       - on déverse dedans toutes les informations du state actuel : ...state
       - on écrase une valeur qui provenait du state actuel
       */
+      console.log(action);
       return {
         ...state, // list: state.list
-        eventsList: action.data,
+        eventsList: action.data.events,
       };
     default:
       return state;

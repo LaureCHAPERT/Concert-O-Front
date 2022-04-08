@@ -13,15 +13,8 @@ import './categoryCard.scss';
 const CategoryCard = ({ name, image, id }) => {
   const dispatch = useDispatch();
   return (
-    <Col className="d-flex justify-content-center">
-      <Card
-        className="categories-card"
-        style={{ width: '17rem' }}
-        href="#"
-        onClick={() => {
-          dispatch(fetchEventsByRegion(id));
-        }}
-      >
+    <Col xs={12} md={4} className="d-flex justify-content-center">
+      <Card className="categories-card" style={{ width: '17rem' }} href="#" onClick={() => dispatch(fetchEventsByRegion(id))}>
         <div>
           <Card.Img variant="top" src={image} />
           <Card.Body>
