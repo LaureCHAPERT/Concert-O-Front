@@ -14,7 +14,7 @@ const eventsMiddleware = (store) => (next) => (action) => {
       // We send request to the API in order to get an event list filtered by genres
       axios.get(`http://jeremy-bruguier.vpnuser.lan:8080/api/genre/${action.id}/events`)
         .then((response) => {
-          console.log(action.data);
+          console.log(response.data.events);
           store.dispatch(saveEventsByGenre(response.data));
         })
         .catch((error) => {
@@ -25,6 +25,7 @@ const eventsMiddleware = (store) => (next) => (action) => {
       // We send request to the API in order to get an event detail
       axios.get(`http://jeremy-bruguier.vpnuser.lan:8080/api/event/${action.id}`)
         .then((response) => {
+          console.log(response.data);
           store.dispatch(saveDetailEvent(response.data));
         })
         .catch((error) => {

@@ -1,9 +1,6 @@
 @use 'src/styles/vars';
 
 .categories-card:hover{
-  transition: all 0.3s; 
-  border-radius: 2rem !important;
-  transform: scale(1.03);
   img{
     transition: all 0.3s; 
     border-radius: 2rem 2rem 0rem 0rem !important;

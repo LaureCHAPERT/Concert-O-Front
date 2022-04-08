@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import './eventDetail.scss';
 import {
-  Container,
+  Card,
   Image,
   Badge,
 } from 'react-bootstrap';
@@ -11,15 +11,17 @@ const EventDetail = () => {
 
   return (
 
-    <Container id="eventDetail">
-      <Image variant="top" src={eventDetail.image} />
-      <h2 className="title">{eventDetail.name} </h2>
-      <Badge bg="secondary">region</Badge>
-      <Badge bg="secondary">{eventDetail.genres[0].name}</Badge>
+    <Card id="eventDetail" className="justify-content-center">
+      <Image className="detailImg" variant="top" src={eventDetail.image} />
+      <div className="">
+        <h2 className="title">{eventDetail.name}</h2>
+        <Badge pill bg="secondary">{eventDetail.region.name}</Badge>
+        <Badge pill>{eventDetail.genres[0].name}</Badge>
+      </div>
       <div className="price">{eventDetail.price}€</div>
       <div className="description">{eventDetail.description}</div>
-      <a href="#">{eventDetail.linkTicketing}</a>
-    </Container>
+      <a href={eventDetail.linkTicketing}>Billeterie</a>
+    </Card>
 
   );
 };

@@ -9,6 +9,7 @@ import { fetchEventsByGenre } from '../../actions/events';
 // import styles
 import './categoryCard.scss';
 
+// CE BOUT DE CODE NE VA PAS ICI !!!!
 // const fetchEvents = ({ regionId, genreId }) => {
 //   let url;
 //   if (regionId && genreId) {
@@ -46,8 +47,8 @@ const CategoryCard = ({ name, image, id }) => {
   // };
 
   return (
-    <Col className="d-flex justify-content-center" onClick={() => dispatch(fetchEventsByGenre(id))}>
-      <Card className="categories-card" style={{ width: '17rem' }} href="#">
+    <Col className="d-flex justify-content-center">
+      <Card className="categories-card" style={{ width: '17rem' }} href="#" onClick={() => dispatch(fetchEventsByGenre(id))}>
         <div>
           <Card.Img variant="top" src={image} />
           <Card.Body>
