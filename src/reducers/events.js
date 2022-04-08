@@ -1,26 +1,27 @@
-import { SAVE_GENRES } from '../actions/genres';
+// import actions
+import { SAVE_EVENTS_BY_REGION } from '../actions/events';
 
 const initialState = {
-  genresList: [],
+  eventsList: [],
 };
 
-const genres = (state = initialState, action = {}) => {
-  // console.log(`le reducer a reçu une action ${action.type}`);
+const events = (state = initialState, action = {}) => {
+  // console.log(`the events reducer received an action ${action.type}`);
   switch (action.type) {
-    case SAVE_GENRES:
+    case SAVE_EVENTS_BY_REGION:
       /*
       - on crée un nouvel objet : {}
       - on déverse dedans toutes les informations du state actuel : ...state
       - on écrase une valeur qui provenait du state actuel
       */
+      console.log(action);
       return {
         ...state, // list: state.list
-        genresList: action.genres,
+        eventsList: action.data.events,
       };
-
     default:
       return state;
   }
 };
 
-export default genres;
+export default events;

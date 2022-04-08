@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   Row,
 } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 // import component(s)
 import CategoryCard from 'src/components/CategoryCard';
@@ -24,13 +25,13 @@ const Regions = () => {
     dispatch(fetchRegions());
   }, []);
   return (
-    <div className="cardGrid">
+    <LinkContainer to="/evenements" style={{ cursor: 'pointer' }}>
       <Row>
         {categoryCard.map((item) => (
           <CategoryCard key={item.id} {...item} />
         ))}
       </Row>
-    </div>
+    </LinkContainer>
   );
 };
 

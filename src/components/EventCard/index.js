@@ -1,24 +1,39 @@
-import './eventCard.scss';
+import PropTypes from 'prop-types';
 import {
   Card,
   Button,
+  Col,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import './eventCard.scss';
 
-const EventCard = () => (
-  <LinkContainer to="/detail">
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the bulk of
-          the card's content.
-        </Card.Text>
-        <Button variant="primary stretched-link">Voir le détail</Button>
-      </Card.Body>
-    </Card>
-  </LinkContainer>
+const EventCard = ({
+  name,
+  description,
+  image,
+}) => (
+
+  <Col xs={12} md={6} lg={4} className="d-flex justify-content-center">
+    <LinkContainer to="/detail">
+      <Card className="events-card">
+        <Card.Img className="events-img" variant="top" src={image} />
+        <Card.Body className="events-body">
+          <Card.Title>{name}</Card.Title>
+          <Card.Text className="events-text">
+            {description}
+          </Card.Text>
+          <Button className="events-button" variant="primary stretched-link">Voir le détail</Button>
+        </Card.Body>
+      </Card>
+    </LinkContainer>
+  </Col>
+
 );
+
+EventCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  description: PropTypes.number.isRequired,
+};
 
 export default EventCard;

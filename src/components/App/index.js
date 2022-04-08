@@ -8,6 +8,7 @@ import AppHeader from '../AppHeader';
 import Regions from '../Regions';
 import Genres from '../Genres';
 import EventDetail from '../EventDetail';
+import EventsList from '../EventsList';
 
 import './app.scss';
 
@@ -20,6 +21,7 @@ const App = () => (
       <Route path="/regions" element={<Regions />} />
       <Route path="/genres" element={<Genres />} />
       <Route path="/detail" element={<EventDetail />} />
+      <Route path="/evenements" element={<EventsList />} />
     </Routes>
     <Footer />
   </div>
