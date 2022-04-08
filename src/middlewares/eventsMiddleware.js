@@ -4,6 +4,8 @@ import {
   saveEventsByGenre,
   FETCH_DETAIL_EVENT,
   saveDetailEvent,
+  FETCH_EVENTS_ON_HOMEPAGE,
+  saveEventsOnHomepage,
 } from '../actions/events';
 
 const eventsMiddleware = (store) => (next) => (action) => {
@@ -12,6 +14,7 @@ const eventsMiddleware = (store) => (next) => (action) => {
       // We send request to the API in order to get an event list filtered by genres
       axios.get(`http://jeremy-bruguier.vpnuser.lan:8080/api/genre/${action.id}/events`)
         .then((response) => {
+          console.log(action.data);
           store.dispatch(saveEventsByGenre(response.data));
         })
         .catch((error) => {
@@ -23,6 +26,17 @@ const eventsMiddleware = (store) => (next) => (action) => {
       axios.get(`http://jeremy-bruguier.vpnuser.lan:8080/api/event/${action.id}`)
         .then((response) => {
           store.dispatch(saveDetailEvent(response.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case FETCH_EVENTS_ON_HOMEPAGE:
+      // We send request to the API in order to get an event detail
+      axios.get('http://jeremy-bruguier.vpnuser.lan:8080/api/event/home')
+        .then((response) => {
+          console.log(response.data);
+          store.dispatch(saveEventsOnHomepage(response.data));
         })
         .catch((error) => {
           console.log(error);

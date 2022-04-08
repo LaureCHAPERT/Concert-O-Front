@@ -17,7 +17,7 @@ const EventCard = ({
 }) => {
   const dispatch = useDispatch();
   return (
-    <Col className="d-flex justify-content-center" onClick={() => dispatch(fetchDetailEvent(id))}>
+    <Col xs={12} md={4} className="d-flex justify-content-center" onClick={() => dispatch(fetchDetailEvent(id))}>
       <LinkContainer to="/detail">
         <Card>
           <Card.Img className="events-img" variant="top" src={image} />

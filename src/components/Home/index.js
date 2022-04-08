@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 // import react-Bootstrap's component(s)
 import {
   CardGroup,
@@ -6,24 +8,31 @@ import {
 } from 'react-bootstrap';
 import SearchBar from 'src/components/SearchBar';
 import EventCard from '../EventCard';
+import { fetchEventsOnHomepage } from '../../actions/events';
 
 import './home.scss';
 
-const Home = () => (
-  <div>
-    <SearchBar />
-    <div className="list">
-      <Row className=" d-flex justify-content-center">
-        <Col>
-          <CardGroup>
-            <EventCard />
-            <EventCard />
-            <EventCard />
-          </CardGroup>
-        </Col>
-      </Row>
+const Home = () => {
+  const dispatch = useDispatch();
+  const { eventsList } = useSelector((state) => state.events);
+  useEffect(() => {
+    dispatch(fetchEventsOnHomepage());
+  }, []);
+  return (
+    <div>
+      <SearchBar />
+      <div className="list">
+        <Row className=" d-flex justify-content-center">
+          <Col>
+            <CardGroup>
+              {eventsList.map((item) => (
+                <EventCard key={item.id} {...item} />
+              ))}
+            </CardGroup>
+          </Col>
+        </Row>
+      </div>
     </div>
-  </div>
-);
-
+  );
+};
 export default Home;

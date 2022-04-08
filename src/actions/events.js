@@ -3,6 +3,8 @@ export const FETCH_EVENTS_BY_GENRE = 'FETCH_EVENTS_BY_GENRE';
 export const SAVE_EVENTS_BY_GENRE = 'SAVE_EVENTS_BY_GENRE';
 export const FETCH_DETAIL_EVENT = 'FETCH_DETAIL_EVENT';
 export const SAVE_DETAIL_EVENT = 'SAVE_DETAIL_EVENT';
+export const FETCH_EVENTS_ON_HOMEPAGE = 'FETCH_EVENTS_ON_HOMEPAGE';
+export const SAVE_EVENTS_ON_HOMEPAGE = 'SAVE_EVENTS_ON_HOMEPAGE';
 // === action creators
 export const fetchEventsByGenre = (id) => ({
   type: FETCH_EVENTS_BY_GENRE,
@@ -21,4 +23,11 @@ export const fetchDetailEvent = (id) => ({
 export const saveDetailEvent = (data) => ({
   type: SAVE_DETAIL_EVENT,
   data,
+});
+export const fetchEventsOnHomepage = () => ({
+  type: FETCH_EVENTS_ON_HOMEPAGE,
+});
+export const saveEventsOnHomepage = (events) => ({
+  type: SAVE_EVENTS_ON_HOMEPAGE,
+  events,
 });

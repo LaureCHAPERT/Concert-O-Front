@@ -1,4 +1,8 @@
-import { SAVE_EVENTS_BY_GENRE, SAVE_DETAIL_EVENT } from '../actions/events';
+import {
+  SAVE_EVENTS_BY_GENRE,
+  SAVE_DETAIL_EVENT,
+  SAVE_EVENTS_ON_HOMEPAGE,
+} from '../actions/events';
 
 const initialState = {
   eventsList: [],
@@ -6,7 +10,9 @@ const initialState = {
     name: '',
     image: '',
     description: '',
-    region: {},
+    region: {
+      name: '',
+    },
     genres: [
       {
         name: '',
@@ -34,6 +40,12 @@ const events = (state = initialState, action = {}) => {
         ...state,
         eventDetail: action.data,
       };
+    case SAVE_EVENTS_ON_HOMEPAGE:
+      return {
+        ...state,
+        eventsList: action.events,
+      };
+
     default:
       return state;
   }
