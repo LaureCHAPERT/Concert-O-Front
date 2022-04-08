@@ -22,7 +22,7 @@ const Genres = () => {
     <LinkContainer to="/evenements" style={{ cursor: 'pointer' }}>
       <Row>
         {genresList.map((item) => (
-          <CategoryCard key={item.id} {...item} />
+          <CategoryCard key={item.id} {...item} filterType="genre" />
         ))}
       </Row>
     </LinkContainer>
