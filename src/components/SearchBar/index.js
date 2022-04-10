@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -12,7 +13,7 @@ import { fetchRegions } from '../../actions/regions';
 import { fetchGenres } from '../../actions/genres';
 import './searchBar.scss';
 
-const SearchBar = () => {
+const SearchBar = ({ message }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRegions());
@@ -20,11 +21,23 @@ const SearchBar = () => {
   }, []);
   const genresList = useSelector((state) => state.genres.genresList);
   const regionsList = useSelector((state) => state.regions.regionsList);
+
+  let catchPhrase;
+  switch (message) {
+    case 'hello':
+      catchPhrase = 'Bienvenue sur Concert\'o';
+      break;
+    case 'results':
+      catchPhrase = 'Il y a X résultats à votre recherche ';
+      break;
+    default:
+      console.log('erreur');
+  }
   return (
     <div>
       <Container className="searchbarContainer">
         <div className="background-title">
-          <h1 className="homepage">Bienvenue</h1>
+          <h1 className="catchPhrase">{catchPhrase}</h1>
         </div>
         <Form className="form">
           <Row>
@@ -56,5 +69,8 @@ const SearchBar = () => {
       </Container>
     </div>
   );
+};
+SearchBar.propTypes = {
+  message: PropTypes.string.isRequired,
 };
 export default SearchBar;
