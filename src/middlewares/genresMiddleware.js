@@ -12,7 +12,6 @@ const genresMiddleware = (store) => (next) => (action) => {
     // We send request to the API in order to get genres list
       axios.get('http://laure-chapert.vpnuser.lan:8000/api/genre')
         .then((response) => {
-          console.log(response.data);
           store.dispatch(saveGenres(response.data));
         })
         .catch((error) => {

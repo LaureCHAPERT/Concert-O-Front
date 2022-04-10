@@ -32,7 +32,7 @@ const events = (state = initialState, action = {}) => {
       return {
         ...state, // list: state.list
         eventsList: action.data.events,
-        results: action.results.array.length,
+        results: action.data.events.length,
       };
     case SAVE_EVENTS_BY_REGION:
       return {
