@@ -37,7 +37,7 @@ const EventCard = ({
 EventCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  description: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };
 

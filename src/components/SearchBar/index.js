@@ -7,7 +7,7 @@ import {
   Col,
 } from 'react-bootstrap';
 
-const AppHeader = () => (
+const SearchBar = () => (
   <div>
     <Container className="searchbarContainer">
       <div className="background-title">
@@ -44,4 +44,4 @@ const AppHeader = () => (
     </Container>
   </div>
 );
-export default AppHeader;
+export default SearchBar;
