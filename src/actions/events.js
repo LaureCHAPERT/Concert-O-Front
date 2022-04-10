@@ -14,9 +14,10 @@ export const fetchEventsByGenre = (id) => ({
   id,
 });
 
-export const saveEventsByGenre = (data) => ({
+export const saveEventsByGenre = (data, results) => ({
   type: SAVE_EVENTS_BY_GENRE,
   data,
+  results,
 });
 
 export const fetchDetailEvent = (id) => ({
@@ -35,9 +36,10 @@ export const saveEventsOnHomepage = (events) => ({
   events,
 });
 
-export const fetchEventsByRegion = (id) => ({
+export const fetchEventsByRegion = (id, results) => ({
   type: FETCH_EVENTS_BY_REGION,
   id,
+  results,
 });
 
 export const saveEventsByRegion = (data) => ({

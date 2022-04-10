@@ -13,7 +13,7 @@ import { fetchRegions } from '../../actions/regions';
 import { fetchGenres } from '../../actions/genres';
 import './searchBar.scss';
 
-const SearchBar = ({ message }) => {
+const SearchBar = ({ message, results }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRegions());
@@ -28,7 +28,7 @@ const SearchBar = ({ message }) => {
       catchPhrase = 'Bienvenue sur Concert\'o';
       break;
     case 'results':
-      catchPhrase = 'Il y a X résultats à votre recherche ';
+      catchPhrase = `Il y a ${results} résultats à votre recherche `;
       break;
     default:
       console.log('erreur');
@@ -72,5 +72,6 @@ const SearchBar = ({ message }) => {
 };
 SearchBar.propTypes = {
   message: PropTypes.string.isRequired,
+  results: PropTypes.number.isRequired,
 };
 export default SearchBar;
