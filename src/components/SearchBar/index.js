@@ -12,10 +12,10 @@ import {
 // Import Action(s)
 import { fetchRegions } from '../../actions/regions';
 import { fetchGenres } from '../../actions/genres';
-import { fetchEventsByRegion, fetchEventsByGenre, fetchEventsWithSearchBar } from '../../actions/events';
+import { fetchEventsWithSearchBar } from '../../actions/events';
 import './searchBar.scss';
 
-const SearchBar = ({ message }) => {
+const SearchBar = ({ message, results }) => {
   const dispatch = useDispatch();
 
   // We launch the  API call to recover regions and genres in selects
@@ -38,31 +38,18 @@ const SearchBar = ({ message }) => {
   }, [genresList, regionsList]);
 
   const navigation = useNavigate();
-  // on change la phrase d'accueil selon la page sur laquelle on est
+
   let catchPhrase;
   switch (message) {
     case 'hello':
       catchPhrase = 'Bienvenue sur Concert\'o';
       break;
     case 'results':
-      catchPhrase = 'Il y a $ résultats à votre recherche ';
+      catchPhrase = `Il y a ${results} résultats à votre recherche `;
       break;
     default:
       console.log('erreur');
   }
-  // on change la fonction dispatchée en fonction des id, présents ou non
-  const callback = () => {
-    if (regionID == null) {
-      dispatch(fetchEventsByGenre(genreID));
-    }
-    else if (genreID == null) {
-      dispatch(fetchEventsByRegion(regionID));
-    }
-    else {
-      dispatch(fetchEventsWithSearchBar(genreID, regionID));
-    }
-  };
-
   return (
     <div>
       <Container className="searchbarContainer">
@@ -81,7 +68,6 @@ const SearchBar = ({ message }) => {
                     console.log(event.target.value);
                   }}
                 >
-                  <option key="#" value="">Tous les genres</option>
                   {genresList.map((item) => (
                     <option key={item.id} value={item.id}>{item.name}</option>
                   ))}
@@ -98,7 +84,6 @@ const SearchBar = ({ message }) => {
                     console.log(event.target.value);
                   }}
                 >
-                  <option key="#" value="">Toutes les régions</option>
                   {regionsList.map((item) => (
                     <option key={item.id} value={item.id}>{item.name}</option>
                   ))}
@@ -110,7 +95,7 @@ const SearchBar = ({ message }) => {
                 type="submit"
                 onClick={(e) => {
                   e.preventDefault();
-                  callback();
+                  dispatch(fetchEventsWithSearchBar(regionID, genreID));
                   navigation('/evenements');
                 }}
               >
@@ -125,5 +110,6 @@ const SearchBar = ({ message }) => {
 };
 SearchBar.propTypes = {
   message: PropTypes.string.isRequired,
+  results: PropTypes.number.isRequired,
 };
 export default SearchBar;
