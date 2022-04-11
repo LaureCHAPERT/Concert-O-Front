@@ -78,7 +78,7 @@ const SearchBar = ({ message, results }) => {
                   as="select"
                   onChange={(event) => {
                     setGenreID(event.target.value);
-                    console.log(event.target.value);
+                    // console.log(event.target.value);
                   }}
                 >
                   <option key="#">Tous les genres</option>
@@ -95,7 +95,7 @@ const SearchBar = ({ message, results }) => {
                   as="select"
                   onChange={(event) => {
                     setRegionID(event.target.value);
-                    console.log(event.target.value);
+                    // console.log(event.target.value);
                   }}
                 >
                   <option key="#">Toutes les régions</option>
