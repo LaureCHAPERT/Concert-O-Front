@@ -7,7 +7,6 @@ export const FETCH_DETAIL_EVENT = 'FETCH_DETAIL_EVENT';
 export const SAVE_DETAIL_EVENT = 'SAVE_DETAIL_EVENT';
 export const FETCH_EVENTS_ON_HOMEPAGE = 'FETCH_EVENTS_ON_HOMEPAGE';
 export const SAVE_EVENTS_ON_HOMEPAGE = 'SAVE_EVENTS_ON_HOMEPAGE';
-
 // === action creators
 export const fetchEventsByGenre = (id) => ({
   type: FETCH_EVENTS_BY_GENRE,

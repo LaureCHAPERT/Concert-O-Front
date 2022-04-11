@@ -49,7 +49,6 @@ const events = (state = initialState, action = {}) => {
         ...state,
         eventsList: action.events,
       };
-
     default:
       return state;
   }

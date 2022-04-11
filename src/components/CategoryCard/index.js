@@ -31,17 +31,18 @@ const CategoryCard = ({
 }) => {
   const dispatch = useDispatch();
 
-  let callback;
-  switch (filterType) {
-    case 'region':
-      callback = dispatch(fetchEventsByRegion(id));
-      break;
-    case 'genre':
-      callback = dispatch(fetchEventsByGenre(id));
-      break;
-    default:
-      console.log('erreur');
-  }
+  const fetchEventById = () => {
+    switch (filterType) {
+      case 'region':
+        dispatch(fetchEventsByRegion(id));
+        break;
+      case 'genre':
+        dispatch(fetchEventsByGenre(id));
+        break;
+      default:
+        console.log('erreur');
+    }
+  };
   // let fetchPayload;
 
   // switch(filterType) {
@@ -55,7 +56,7 @@ const CategoryCard = ({
 
   return (
     <Col xs={12} md={4} className="d-flex justify-content-center">
-      <Card className="categories-card" style={{ width: '17rem' }} href="#" onClick={() => dispatch(callback(id))}>
+      <Card className="categories-card" style={{ width: '17rem' }} href="#" onClick={() => fetchEventById()}>
         <div>
           <Card.Img variant="top" src={image} />
           <Card.Body>

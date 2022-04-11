@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Navigate, useNavigate } from 'react-router-dom';
 import {
   Form,
   Button,
@@ -22,6 +23,11 @@ const SearchBar = ({ message, results }) => {
   const genresList = useSelector((state) => state.genres.genresList);
   const regionsList = useSelector((state) => state.regions.regionsList);
 
+  const [regionID, setRegionID] = useState();
+  const [genreID, setGenreID] = useState();
+
+  const navigation = useNavigate();
+
   let catchPhrase;
   switch (message) {
     case 'hello':
@@ -33,6 +39,7 @@ const SearchBar = ({ message, results }) => {
     default:
       console.log('erreur');
   }
+
   return (
     <div>
       <Container className="searchbarContainer">
@@ -44,9 +51,15 @@ const SearchBar = ({ message, results }) => {
             <Col sm>
               <Form.Group>
                 <Form.Label>Choisissez votre style musical : </Form.Label>
-                <Form.Control as="select">
+                <Form.Control
+                  as="select"
+                  onChange={(event) => {
+                    setRegionID(event.target.value);
+                    console.log(event.target.value);
+                  }}
+                >
                   {genresList.map((item) => (
-                    <option key={item.id} value="selectGenre">{item.name}</option>
+                    <option key={item.id} value={item.id}>{item.name}</option>
                   ))}
                 </Form.Control>
               </Form.Group>
@@ -54,15 +67,29 @@ const SearchBar = ({ message, results }) => {
             <Col sm>
               <Form.Group>
                 <Form.Label>Choisissez votre région : </Form.Label>
-                <Form.Control as="select">
+                <Form.Control
+                  as="select"
+                  onChange={(event) => {
+                    setGenreID(event.target.value);
+                    console.log(event.target.value);
+                  }}
+                >
                   {regionsList.map((item) => (
-                    <option key={item.id} value="selectRegion">{item.name}</option>
+                    <option key={item.id} value={item.id}>{item.name}</option>
                   ))}
                 </Form.Control>
               </Form.Group>
             </Col>
             <Col lg={2} className="pr-4">
-              <Button type="submit">Rechercher</Button>
+              <Button
+                type="submit"
+                onClick={() => {
+                  // dispatch(blabla(regionID, genreID));
+                  // navi
+                }}
+              >
+                Rechercher
+              </Button>
             </Col>
           </Row>
         </Form>
