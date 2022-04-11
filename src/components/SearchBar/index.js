@@ -45,7 +45,7 @@ const SearchBar = ({ message, results }) => {
       catchPhrase = 'Bienvenue sur Concert\'o';
       break;
     case 'results':
-      catchPhrase = `Il y a ${results} résultats à votre recherche `;
+      catchPhrase = `Il y a ${results} résultat(s) à votre recherche `;
       break;
     default:
       console.log('erreur');

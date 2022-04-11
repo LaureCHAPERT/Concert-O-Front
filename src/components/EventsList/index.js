@@ -12,7 +12,12 @@ const EventsList = () => {
   const { eventsList } = useSelector((state) => state.events);
   return (
     <div>
-      <SearchBar message="results" results={eventsList.length} />
+      <SearchBar
+      // on passe une string pour changer le titre en fonction de la page
+      // on passe la longueur du tableau pour dynamiser les résultats dans le titre
+        message="results"
+        results={eventsList.length}
+      />
       <Row>
         {eventsList.map((item) => (
           <EventCard key={item.id} {...item} />

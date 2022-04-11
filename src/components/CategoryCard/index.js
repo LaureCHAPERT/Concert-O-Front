@@ -59,7 +59,7 @@ const CategoryCard = ({
     <Col xs={12} md={4} className="d-flex justify-content-center">
       <Card className="categories-card" style={{ width: '17rem' }} href="#" onClick={() => fetchEventById()}>
         <div>
-          <Card.Img variant="top" src={image} />
+          <Card.Img className="categoryImage" variant="top" src={image} />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
           </Card.Body>
