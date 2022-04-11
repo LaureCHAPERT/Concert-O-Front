@@ -12,7 +12,7 @@ const EventsList = () => {
   const { eventsList } = useSelector((state) => state.events);
   return (
     <div>
-      <SearchBar results={eventsList.results} message="results" />
+      <SearchBar message="results" />
       <Row>
         {eventsList.map((item) => (
           <EventCard key={item.id} {...item} />

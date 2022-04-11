@@ -3,6 +3,7 @@ import {
   SAVE_DETAIL_EVENT,
   SAVE_EVENTS_ON_HOMEPAGE,
   SAVE_EVENTS_BY_REGION,
+  SAVE_EVENTS_WITH_SEARCHBAR,
 } from '../actions/events';
 
 const initialState = {
@@ -22,7 +23,6 @@ const initialState = {
     price: 0,
     linkTicketing: '',
   },
-  results: 0,
 };
 
 const events = (state = initialState, action = {}) => {
@@ -32,7 +32,6 @@ const events = (state = initialState, action = {}) => {
       return {
         ...state, // list: state.list
         eventsList: action.data.events,
-        results: action.data.events.length,
       };
     case SAVE_EVENTS_BY_REGION:
       return {
@@ -48,6 +47,11 @@ const events = (state = initialState, action = {}) => {
       return {
         ...state,
         eventsList: action.events,
+      };
+    case SAVE_EVENTS_WITH_SEARCHBAR:
+      return {
+        ...state,
+        eventsList: action.data,
       };
     default:
       return state;

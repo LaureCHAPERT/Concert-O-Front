@@ -43,6 +43,7 @@ const CategoryCard = ({
         console.log('erreur');
     }
   };
+
   // let fetchPayload;
 
   // switch(filterType) {

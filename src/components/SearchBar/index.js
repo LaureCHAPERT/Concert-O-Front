@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Form,
   Button,
@@ -12,19 +12,30 @@ import {
 // Import Action(s)
 import { fetchRegions } from '../../actions/regions';
 import { fetchGenres } from '../../actions/genres';
+import { fetchEventsWithSearchBar } from '../../actions/events';
 import './searchBar.scss';
 
-const SearchBar = ({ message, results }) => {
+const SearchBar = ({ message }) => {
   const dispatch = useDispatch();
+
+  // We launch the  API call to recover regions and genres in selects
   useEffect(() => {
     dispatch(fetchRegions());
     dispatch(fetchGenres());
   }, []);
+
   const genresList = useSelector((state) => state.genres.genresList);
   const regionsList = useSelector((state) => state.regions.regionsList);
 
   const [regionID, setRegionID] = useState();
   const [genreID, setGenreID] = useState();
+
+  useEffect(() => {
+    if (genresList[0] && regionsList[0]) {
+      setRegionID(regionsList[0].id);
+      setGenreID(genresList[0].id);
+    }
+  }, [genresList, regionsList]);
 
   const navigation = useNavigate();
 
@@ -34,7 +45,7 @@ const SearchBar = ({ message, results }) => {
       catchPhrase = 'Bienvenue sur Concert\'o';
       break;
     case 'results':
-      catchPhrase = `Il y a ${results} résultats à votre recherche `;
+      catchPhrase = 'Il y a $ résultats à votre recherche ';
       break;
     default:
       console.log('erreur');
@@ -54,7 +65,7 @@ const SearchBar = ({ message, results }) => {
                 <Form.Control
                   as="select"
                   onChange={(event) => {
-                    setRegionID(event.target.value);
+                    setGenreID(event.target.value);
                     console.log(event.target.value);
                   }}
                 >
@@ -70,7 +81,7 @@ const SearchBar = ({ message, results }) => {
                 <Form.Control
                   as="select"
                   onChange={(event) => {
-                    setGenreID(event.target.value);
+                    setRegionID(event.target.value);
                     console.log(event.target.value);
                   }}
                 >
@@ -83,9 +94,10 @@ const SearchBar = ({ message, results }) => {
             <Col lg={2} className="pr-4">
               <Button
                 type="submit"
-                onClick={() => {
-                  // dispatch(blabla(regionID, genreID));
-                  // navi
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(fetchEventsWithSearchBar(regionID, genreID));
+                  navigation('/evenements');
                 }}
               >
                 Rechercher
@@ -99,6 +111,5 @@ const SearchBar = ({ message, results }) => {
 };
 SearchBar.propTypes = {
   message: PropTypes.string.isRequired,
-  results: PropTypes.number.isRequired,
 };
 export default SearchBar;

@@ -13,6 +13,7 @@ const genresMiddleware = (store) => (next) => (action) => {
       axios.get('http://jeremy-bruguier.vpnuser.lan:8080/api/genre')
         .then((response) => {
           store.dispatch(saveGenres(response.data));
+          console.log(response.data);
         })
         .catch((error) => {
           console.log(error);

@@ -8,6 +8,8 @@ import {
   saveEventsOnHomepage,
   FETCH_EVENTS_BY_REGION,
   saveEventsByRegion,
+  FETCH_EVENTS_WITH_SEARCHBAR,
+  saveEventsWithSearchBar,
 } from '../actions/events';
 
 const eventsMiddleware = (store) => (next) => (action) => {
@@ -49,8 +51,19 @@ const eventsMiddleware = (store) => (next) => (action) => {
       // We send request to the API in order to get an event list filtered by genres
       axios.get(`http://jeremy-bruguier.vpnuser.lan:8080/api/region/${action.id}/events`)
         .then((response) => {
-          // console.log('response', response.data.events);
+          // console.log('response', response.data);
           store.dispatch(saveEventsByRegion(response.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case FETCH_EVENTS_WITH_SEARCHBAR:
+      // We send request to the API in order to get an event list filtered by genres
+      axios.get(`http://jeremy-bruguier.vpnuser.lan:8080/api/event/region/${action.regionId}/genre/${action.genreId}`)
+        .then((response) => {
+          console.log('response', response.data);
+          store.dispatch(saveEventsWithSearchBar(response.data));
         })
         .catch((error) => {
           console.log(error);
