@@ -9,6 +9,8 @@ export const FETCH_EVENTS_ON_HOMEPAGE = 'FETCH_EVENTS_ON_HOMEPAGE';
 export const SAVE_EVENTS_ON_HOMEPAGE = 'SAVE_EVENTS_ON_HOMEPAGE';
 export const FETCH_EVENTS_WITH_SEARCHBAR = 'FETCH_EVENTS_WITH_SEARCHBAR';
 export const SAVE_EVENTS_WITH_SEARCHBAR = 'SAVE_EVENTS_WITH_SEARCHBAR';
+export const FETCH_ALL_EVENTS = 'FETCH_ALL_EVENTS';
+export const SAVE_ALL_EVENTS = 'SAVE_ALL_EVENTS';
 // === action creators
 export const fetchEventsByGenre = (id) => ({
   type: FETCH_EVENTS_BY_GENRE,
@@ -54,5 +56,12 @@ export const fetchEventsWithSearchBar = (regionId, genreId) => ({
 });
 export const saveEventsWithSearchBar = (data) => ({
   type: SAVE_EVENTS_WITH_SEARCHBAR,
+  data,
+});
+export const fetchAllEvents = () => ({
+  type: FETCH_ALL_EVENTS,
+});
+export const saveAllEvents = (data) => ({
+  type: SAVE_ALL_EVENTS,
   data,
 });

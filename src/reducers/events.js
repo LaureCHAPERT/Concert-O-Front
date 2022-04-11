@@ -4,6 +4,7 @@ import {
   SAVE_EVENTS_ON_HOMEPAGE,
   SAVE_EVENTS_BY_REGION,
   SAVE_EVENTS_WITH_SEARCHBAR,
+  SAVE_ALL_EVENTS,
 } from '../actions/events';
 
 const initialState = {
@@ -49,6 +50,11 @@ const events = (state = initialState, action = {}) => {
         eventsList: action.events,
       };
     case SAVE_EVENTS_WITH_SEARCHBAR:
+      return {
+        ...state,
+        eventsList: action.data,
+      };
+    case SAVE_ALL_EVENTS:
       return {
         ...state,
         eventsList: action.data,

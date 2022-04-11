@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { URL } from '../../config';
 import {
   FETCH_GENRES, saveGenres,
 } from '../actions/genres';
@@ -10,7 +10,7 @@ const genresMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_GENRES:
     // We send request to the API in order to get genres list
-      axios.get('http://jeremy-bruguier.vpnuser.lan:8080/api/genre')
+      axios.get('http://jeremy-bruguier.vpnuser.lan:8000/api/genre')
         .then((response) => {
           store.dispatch(saveGenres(response.data));
           console.log(response.data);

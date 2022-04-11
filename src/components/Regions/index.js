@@ -26,7 +26,7 @@ const Regions = () => {
   }, []);
   // empty array with useEffect : acts like componentDidMount and only runs once
   return (
-    <LinkContainer to="/evenements" style={{ cursor: 'pointer' }}>
+    <LinkContainer to="/resultats-evenements" style={{ cursor: 'pointer' }}>
       <Row>
         {regionsList.map((item) => (
           <CategoryCard key={item.id} {...item} filterType="region" />

@@ -19,7 +19,7 @@ const Genres = () => {
   }, []);
   // empty array with useEffect : acts like componentDidMount and only runs once
   return (
-    <LinkContainer to="/evenements" style={{ cursor: 'pointer' }}>
+    <LinkContainer to="/resultats-evenements" style={{ cursor: 'pointer' }}>
       <Row>
         {genresList.map((item) => (
           <CategoryCard key={item.id} {...item} filterType="genre" />
