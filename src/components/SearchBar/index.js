@@ -142,7 +142,6 @@ SearchBar.defaultProps = {
 SearchBar.propTypes = {
   genreId: PropTypes.number,
   regionId: PropTypes.number,
-  // message: PropTypes.string.isRequired,
   results: PropTypes.number.isRequired,
 };
 export default SearchBar;
