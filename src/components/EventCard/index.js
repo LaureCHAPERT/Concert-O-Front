@@ -19,14 +19,14 @@ const EventCard = ({
   return (
     <Col xs={12} md={4} className="d-flex justify-content-center" onClick={() => dispatch(fetchDetailEvent(id))}>
       <LinkContainer to="/detail">
-        <Card>
+        <Card className="events-card">
           <Card.Img className="events-img" variant="top" src={image} />
           <Card.Body>
             <Card.Title>{name} </Card.Title>
             <Card.Text>
               {description}
             </Card.Text>
-            <Button variant="primary stretched-link">Voir le détail</Button>
+            <Button className="events-button" variant="primary stretched-link">Voir le détail</Button>
           </Card.Body>
         </Card>
       </LinkContainer>
