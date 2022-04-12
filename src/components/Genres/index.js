@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   Row,
 } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+
 import CategoryCard from 'src/components/CategoryCard';
 
 import { fetchGenres } from '../../actions/genres';
@@ -19,13 +19,12 @@ const Genres = () => {
   }, []);
   // empty array with useEffect : acts like componentDidMount and only runs once
   return (
-    <LinkContainer to="/resultats-evenements" style={{ cursor: 'pointer' }}>
-      <Row>
-        {genresList.map((item) => (
-          <CategoryCard key={item.id} {...item} filterType="genre" />
-        ))}
-      </Row>
-    </LinkContainer>
+    <Row>
+      {genresList.map((item) => (
+        <CategoryCard key={item.id} {...item} filterType="genre" />
+      ))}
+    </Row>
+
   );
 };
 export default Genres;

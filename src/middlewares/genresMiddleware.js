@@ -13,7 +13,7 @@ const genresMiddleware = (store) => (next) => (action) => {
       axios.get('http://laure-chapert.vpnuser.lan:8000/api/genre')
         .then((response) => {
           store.dispatch(saveGenres(response.data));
-          console.log(response.data);
+          // console.log(response.data);
         })
         .catch((error) => {
           console.log(error);

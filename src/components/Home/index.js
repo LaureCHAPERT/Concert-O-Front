@@ -18,6 +18,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchEventsOnHomepage());
   }, []);
+
   return (
     <div>
       <SearchBar message="hello" />

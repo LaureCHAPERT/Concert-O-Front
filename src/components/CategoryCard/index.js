@@ -5,6 +5,7 @@ import {
   Col,
   Card,
 } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { fetchEventsByGenre, fetchEventsByRegion } from '../../actions/events';
 // import styles
 import './categoryCard.scss';
@@ -30,34 +31,35 @@ const CategoryCard = ({
   filterType,
 }) => {
   const dispatch = useDispatch();
+  const navigation = useNavigate();
 
-  const fetchEventById = () => {
+  const handleOnClick = () => {
+    // console.log(typeof id);
     switch (filterType) {
       case 'region':
         dispatch(fetchEventsByRegion(id));
+        // TODO fonctionnalité pour envoyer les ID aux selects de la  searchBar en passant par
+        // TODO EventsList
+        // on redirige vers la route qui appelle eventLists et on attribue un state
+        // aux routes qui appellent des composants. Dans ce state on place le regionId.
+        // navigation('/resultats-evenements', { state: { regionId: id } });
+        navigation('/resultats-evenements');
+        console.log(id);
         break;
       case 'genre':
         dispatch(fetchEventsByGenre(id));
+        // TODO IDEM
+        // navigation('/resultats-evenements', { state: { regionId: id } });
+        navigation('/resultats-evenements');
         break;
       default:
         console.log('erreur');
     }
   };
 
-  // let fetchPayload;
-
-  // switch(filterType) {
-  //   case 'region':
-  //     fetchPayload = { regionId: id, genreId: null};
-  //     break;
-  //   case 'genre':
-  //     fetchPayload = { regionId: null, genreId: id};
-  //     break;
-  // };
-
   return (
     <Col xs={12} md={4} className="d-flex justify-content-center">
-      <Card className="categories-card" style={{ width: '17rem' }} href="#" onClick={() => fetchEventById()}>
+      <Card className="categories-card" style={{ width: '17rem', cursor: 'pointer' }} href="#" onClick={() => handleOnClick()}>
         <div>
           <Card.Img className="categoryImage" variant="top" src={image} />
           <Card.Body>
@@ -66,6 +68,7 @@ const CategoryCard = ({
         </div>
       </Card>
     </Col>
+
   );
 };
 CategoryCard.propTypes = {
