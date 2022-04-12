@@ -9,6 +9,8 @@ import Regions from '../Regions';
 import Genres from '../Genres';
 import EventDetail from '../EventDetail';
 import EventsList from '../EventsList';
+import Legal from '../Legal';
+import Contact from '../Contact';
 
 import './app.scss';
 
@@ -22,6 +24,8 @@ const App = () => (
       <Route path="/genres" element={<Genres />} />
       <Route path="/detail" element={<EventDetail />} />
       <Route path="/evenements" element={<EventsList />} />
+      <Route path="/mentions-legales" element={<Legal />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
     <Footer />
   </div>
