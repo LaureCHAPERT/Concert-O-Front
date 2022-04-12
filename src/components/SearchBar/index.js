@@ -23,7 +23,7 @@ import './searchBar.scss';
 const SearchBar = ({
   regionId,
   genreId,
-  // results,
+  results,
 }) => {
   const dispatch = useDispatch();
 
@@ -39,12 +39,13 @@ const SearchBar = ({
   const [regionID, setRegionID] = useState(regionId);
   const [genreID, setGenreID] = useState(genreId);
 
-  /* if (results === []) {
-    catchPhrase = 'Bienvenue sur Concert\'o';
+  let catchPhrase;
+  if (results > 0) {
+    catchPhrase = `Il y a ${results} résultat(s) à votre recherche `;
   }
   else {
-    catchPhrase = `Il y a ${results} résultat(s) à votre recherche `;
-  } */
+    catchPhrase = 'Bienvenue sur Concert\'o';
+  }
 
   // on change la fonction dispatchée en fonction des id, présents ou non
   const callback = () => {
@@ -69,7 +70,7 @@ const SearchBar = ({
     <div>
       <Container className="searchbarContainer">
         <div className="background-title">
-          <h1 className="catchPhrase">Bienvenue</h1>
+          <h1 className="catchPhrase">{catchPhrase}</h1>
         </div>
         <Form className="form">
           <Row>
@@ -142,6 +143,6 @@ SearchBar.propTypes = {
   genreId: PropTypes.number,
   regionId: PropTypes.number,
   // message: PropTypes.string.isRequired,
-  // results: PropTypes.number.isRequired,
+  results: PropTypes.number.isRequired,
 };
 export default SearchBar;
