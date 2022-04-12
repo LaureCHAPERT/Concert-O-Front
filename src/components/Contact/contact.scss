@@ -1,0 +1,14 @@
+@use 'src/styles/vars';
+
+.contact-card{
+  margin: 4%;
+}
+.contact-form{
+  background-color: vars.$backgroundColor !important;
+  margin: 5%;
+  padding: 5%;
+}
+.contact-title{
+  padding-bottom: 3%;
+}
+
