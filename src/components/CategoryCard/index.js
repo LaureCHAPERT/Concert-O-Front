@@ -29,6 +29,7 @@ const CategoryCard = ({
   image,
   id,
   filterType,
+
 }) => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
@@ -44,7 +45,7 @@ const CategoryCard = ({
         // aux routes qui appellent des composants. Dans ce state on place le regionId.
         // navigation('/resultats-evenements', { state: { regionId: id } });
         navigation('/resultats-evenements');
-        console.log(id);
+        // console.log(id);
         break;
       case 'genre':
         dispatch(fetchEventsByGenre(id));

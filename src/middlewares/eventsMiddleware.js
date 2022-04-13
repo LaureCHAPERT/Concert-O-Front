@@ -32,7 +32,7 @@ const eventsMiddleware = (store) => (next) => (action) => {
       // We send request to the API in order to get an event detail
       axios.get(`http://laure-chapert.vpnuser.lan:8000/api/event/${action.id}`)
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           store.dispatch(saveDetailEvent(response.data));
         })
         .catch((error) => {
@@ -54,7 +54,6 @@ const eventsMiddleware = (store) => (next) => (action) => {
       // We send request to the API in order to get an event list filtered by genres
       axios.get(`http://laure-chapert.vpnuser.lan:8000/api/region/${action.id}/events`)
         .then((response) => {
-          // console.log('response', response.data);
           store.dispatch(saveEventsByRegion(response.data));
         })
         .catch((error) => {
@@ -65,7 +64,7 @@ const eventsMiddleware = (store) => (next) => (action) => {
       // We send request to the API in order to get an event list filtered by genres
       axios.get(`http://laure-chapert.vpnuser.lan:8000/api/event/region/${action.genreId}/genre/${action.regionId}`)
         .then((response) => {
-          console.log('response', response.data);
+          // console.log('response', response.data);
           store.dispatch(saveEventsWithSearchBar(response.data));
         })
         .catch(() => {
@@ -77,7 +76,7 @@ const eventsMiddleware = (store) => (next) => (action) => {
       // We send request to the API in order to get an event list filtered by genres
       axios.get('http://laure-chapert.vpnuser.lan:8000/api/event')
         .then((response) => {
-          console.log('response', response.data);
+          // console.log('response', response.data);
           store.dispatch(saveAllEvents(response.data));
         })
         .catch(() => {
