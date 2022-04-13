@@ -1,5 +1,6 @@
 @use 'src/styles/vars';
 
+
 #eventDetail{
   margin-bottom: 2em;
   margin-top: 2em; 
@@ -24,6 +25,8 @@ h2{
 }
 .detailImg{
   margin:auto;
+  width: -webkit-fill-available;
+  margin: 3%;
   height: 70%;
 }
 .genre-badge{

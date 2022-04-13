@@ -19,13 +19,13 @@ const EventCard = ({
   const dispatch = useDispatch();
   // const slug = useSelector((state) => state.events.eventDetail.slug);
   return (
-    <Col sm={12} md={4} className="d-flex justify-content-center" onClick={() => dispatch(fetchDetailEvent(id))}>
+    <Col sm={12} md={6} xl={4} className="d-flex justify-content-center" onClick={() => dispatch(fetchDetailEvent(id))}>
       <LinkContainer to={`/evenement/${slug}`}>
         <Card className="events-card">
           <Card.Img className="events-img" variant="top" src={image} />
           <Card.Body>
             <Card.Title>{name} </Card.Title>
-            <Card.Text>
+            <Card.Text className="events-text">
               {description}
             </Card.Text>
             <Button className="events-button" variant="primary stretched-link">Voir le détail</Button>
