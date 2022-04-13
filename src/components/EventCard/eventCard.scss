@@ -19,16 +19,18 @@
 }
 .events-card{
   min-width: 33%; 
+  padding-bottom: 10%;
 }
 .events-img{
   clip-path:circle(30%);
   opacity: 100%;
 }
 .events-text{
+  overflow:hidden;
   text-overflow: ellipsis;
-  padding-bottom: 50%;
-  margin-bottom: 2em;
+  display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
 }
-
 
 
