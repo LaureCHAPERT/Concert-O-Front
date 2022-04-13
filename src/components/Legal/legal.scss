@@ -1,0 +1,13 @@
+@use 'src/styles/vars';
+
+.h2{
+  padding: 3%;
+}
+.legal{
+  background-color: vars.$backgroundColor !important;
+  margin: 5%;
+  padding: 5%;
+}
+.legal-div{
+padding: 2%;
+}

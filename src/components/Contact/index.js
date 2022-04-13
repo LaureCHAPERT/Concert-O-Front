@@ -127,11 +127,11 @@ const Contact = () => (
 
         <Form.Group as={Row} className="mb-3" controlId="formSelect">
           <Form.Label column sm={2} htmlFor="Select">
-            Je vous contacte :
+            Je vous contacte pour:
           </Form.Label>
           <Col sm={10}>
             <Form.Select id="Select">
-              <option disabled>choisir...</option>
+              <option>choisir...</option>
               <option>Un problème sur le site</option>
               <option>Je suis un organisme, je veux m'inscrire</option>
               <option>Autre</option>
