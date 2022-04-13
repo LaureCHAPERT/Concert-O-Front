@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 // import react-Bootstrap's component(s)
 import {
@@ -5,6 +6,7 @@ import {
 } from 'react-bootstrap';
 // import { useLocation } from 'react-router-dom';
 import SearchBar from 'src/components/SearchBar';
+import Pagination from 'src/components/Pagination';
 import EventCard from '../EventCard';
 
 import './eventsList.scss';
@@ -17,7 +19,16 @@ const EventsList = () => {
   // si location est definie, prends moi son state
   // si le state est défini prends moi la région
   // console.log(location.state); => renvoie null
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(9);
+
   const { eventsList } = useSelector((state) => state.events);
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexofFirstPost = indexOfLastPost - postsPerPage;
+  const currentEvents = eventsList.slice(indexofFirstPost, indexOfLastPost);
+  // CHange page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <div>
       <SearchBar
@@ -29,10 +40,16 @@ const EventsList = () => {
         // regionId={regionId}
       />
       <Row>
-        {eventsList.map((item) => (
+        {currentEvents.map((item) => (
           <EventCard key={item.id} {...item} />
         ))}
       </Row>
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={eventsList.length}
+        paginate={paginate}
+
+      />
     </div>
   );
 };
