@@ -30,7 +30,6 @@ const SearchBar = ({
   const dispatch = useDispatch();
   const navigation = useNavigate();
 
-  // console.log(results);
   // We launch the  API call to recover regions and genres in selects
   useEffect(() => {
     dispatch(fetchRegions());

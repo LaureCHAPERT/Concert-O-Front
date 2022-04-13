@@ -1,4 +1,9 @@
-.pagination {
+@use 'src/styles/vars';
+#pagination-navbar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center !important;
+}
+.page-item a {
+  color : vars.$fontColor;
+  
 }
