@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 // import { LinkContainer } from 'react-router-bootstrap';
+import './pagination.scss';
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   const pageNumbers = [];
+  // eslint-disable-next-line no-plusplus
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
