@@ -38,7 +38,7 @@ const AppHeader = () => {
                 <Nav.Link className="navlink-header">Regions</Nav.Link>
               </LinkContainer>
               <LinkContainer
-                to="/evenements"
+                to="/tous-les-evenements"
                 onClick={() => {
                   dispatch(fetchAllEvents());
                 }}

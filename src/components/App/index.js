@@ -22,6 +22,7 @@ const App = () => (
       <Route path="/genres" element={<Genres />} />
       <Route path="/detail" element={<EventDetail />} />
       <Route path="/resultats-evenements" element={<EventsList />} />
+      <Route path="/tous-les-evenements" element={<EventsList />} />
     </Routes>
     <Footer />
   </div>
