@@ -14,20 +14,21 @@ const EventCard = ({
   description,
   image,
   id,
+  slug,
 }) => {
   const dispatch = useDispatch();
-  // TODO const slug = useSelector((state) => state.events.eventDetail.slug);
+  // const slug = useSelector((state) => state.events.eventDetail.slug);
   return (
     <Col sm={12} md={4} className="d-flex justify-content-center" onClick={() => dispatch(fetchDetailEvent(id))}>
-      <LinkContainer to="/detail">
-        <Card>
+      <LinkContainer to={`/evenement/${slug}`}>
+        <Card className="events-card">
           <Card.Img className="events-img" variant="top" src={image} />
           <Card.Body>
             <Card.Title>{name} </Card.Title>
             <Card.Text>
               {description}
             </Card.Text>
-            <Button variant="primary stretched-link">Voir le détail</Button>
+            <Button className="events-button" variant="primary stretched-link">Voir le détail</Button>
           </Card.Body>
         </Card>
       </LinkContainer>
@@ -40,6 +41,7 @@ EventCard.propTypes = {
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+  slug: PropTypes.string.isRequired,
 };
 
 export default EventCard;

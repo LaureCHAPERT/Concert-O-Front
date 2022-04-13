@@ -25,7 +25,9 @@
   opacity: 100%;
 }
 .events-text{
-  text-overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 50%;
+  margin-bottom: 2em;
 }
 
 
