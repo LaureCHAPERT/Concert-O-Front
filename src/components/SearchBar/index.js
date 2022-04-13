@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import {
   Form,
@@ -21,12 +22,15 @@ import {
 import './searchBar.scss';
 
 const SearchBar = ({
-  regionId,
-  genreId,
+  // regionId,
+  // genreId,
   results,
+  message,
 }) => {
   const dispatch = useDispatch();
+  const navigation = useNavigate();
 
+  console.log(results);
   // We launch the  API call to recover regions and genres in selects
   useEffect(() => {
     dispatch(fetchRegions());
@@ -36,15 +40,19 @@ const SearchBar = ({
   const genresList = useSelector((state) => state.genres.genresList);
   const regionsList = useSelector((state) => state.regions.regionsList);
 
-  const [regionID, setRegionID] = useState(regionId);
-  const [genreID, setGenreID] = useState(genreId);
+  const [regionID, setRegionID] = useState(); // regionId
+  const [genreID, setGenreID] = useState(); // genreId
 
   let catchPhrase;
-  if (results > 0) {
-    catchPhrase = `Il y a ${results} résultat(s) à votre recherche `;
-  }
-  else {
-    catchPhrase = 'Bienvenue sur Concert\'o';
+  switch (message) {
+    case 'results':
+      catchPhrase = `Il y a ${results} résultat(s) à votre recherche `;
+      break;
+    case 'hello':
+      catchPhrase = 'Bienvenue sur Concert\'o';
+      break;
+    default:
+      console.log('erreur');
   }
 
   // on change la fonction dispatchée en fonction des id, présents ou non
@@ -123,6 +131,7 @@ const SearchBar = ({
                 onClick={(e) => {
                   e.preventDefault();
                   callback();
+                  navigation('/resultats-evenements');
                 }}
               >
                 Rechercher
@@ -135,13 +144,14 @@ const SearchBar = ({
   );
 };
 
-SearchBar.defaultProps = {
+/* SearchBar.defaultProps = {
   genreId: 0,
   regionId: 0,
-};
+}; */
 SearchBar.propTypes = {
-  genreId: PropTypes.number,
-  regionId: PropTypes.number,
+  // genreId: PropTypes.number,
+  // regionId: PropTypes.number,
   results: PropTypes.number.isRequired,
+  message: PropTypes.string.isRequired,
 };
 export default SearchBar;

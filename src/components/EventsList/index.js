@@ -24,6 +24,7 @@ const EventsList = () => {
       // on passe une string pour changer le titre en fonction de la page
       // on passe la longueur du tableau pour dynamiser les résultats dans le titre
         results={eventsList.length}
+        message="results"
         // genreId={genreId}
         // regionId={regionId}
       />

@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <div>
-      <SearchBar />
+      <SearchBar message="hello" />
       <div className="list">
         <Row className=" d-flex justify-content-center">
           <Col>
