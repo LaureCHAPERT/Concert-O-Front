@@ -10,20 +10,6 @@ import { fetchEventsByGenre, fetchEventsByRegion } from '../../actions/events';
 // import styles
 import './categoryCard.scss';
 
-// CE BOUT DE CODE NE VA PAS ICI !!!!
-// const fetchEvents = ({ regionId, genreId }) => {
-//   let url;
-//   if (regionId && genreId) {
-//     url = '/${regionId}/${genreId}';
-//   } else if (regionId) {
-//     url = '/${regionId}/';
-//   } else if (genreId) {
-//     url = '/${genreId}/';
-//   } else {
-//     console.log('MISSING PARAM');
-//   }
-// }
-
 const CategoryCard = ({
   name,
   image,
@@ -54,7 +40,7 @@ const CategoryCard = ({
         navigation('/resultats-evenements');
         break;
       default:
-        console.log('erreur');
+        // console.log('erreur');
     }
   };
 
