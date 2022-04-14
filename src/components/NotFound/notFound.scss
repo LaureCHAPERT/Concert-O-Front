@@ -4,7 +4,7 @@
   text-align: center;
 }
 .error-img{
-  margin-left:10em;
+  width: -webkit-fill-available;
 }
 .error{
   background-color: vars.$backgroundColor !important;
@@ -13,4 +13,7 @@
 }
 .error-div{
 padding: 2%;
+}
+.error-message {
+  text-align: center;
 }
