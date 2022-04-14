@@ -27,7 +27,7 @@ const EventsList = () => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexofFirstPost = indexOfLastPost - postsPerPage;
   const currentEvents = eventsList.slice(indexofFirstPost, indexOfLastPost);
-  // CHange page
+  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <div>

@@ -1,0 +1,16 @@
+@use 'src/styles/vars';
+.error-title{
+  padding: 3%;
+  text-align: center;
+}
+.error-img{
+  margin-left:10em;
+}
+.error{
+  background-color: vars.$backgroundColor !important;
+  margin: 5%;
+  padding: 5%;
+}
+.error-div{
+padding: 2%;
+}

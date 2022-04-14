@@ -20,7 +20,7 @@ const EventDetail = () => {
       </div>
       <div className="price">{eventDetail.price}€</div>
       <div className="description">{eventDetail.description}</div>
-      <a href={eventDetail.linkTicketing}>Billeterie</a>
+      <a href={`${eventDetail.linkTicketing}`}>Billeterie</a>
     </Card>
 
   );
