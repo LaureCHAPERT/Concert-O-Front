@@ -98,7 +98,7 @@ const Contact = () => (
             </Col>
           </Form.Group>
         </fieldset>
-        <Form.Group as={Row} className="mb-3" controlId="formLastname">
+        <Form.Group as={Row} className="mb-3" id="formLastname">
           <Form.Label column sm={2}>
             Nom
           </Form.Label>
@@ -107,7 +107,7 @@ const Contact = () => (
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} className="mb-3" controlId="formFirstname">
+        <Form.Group as={Row} className="mb-3" id="formFirstname">
           <Form.Label column sm={2}>
             Prénom
           </Form.Label>
@@ -116,7 +116,7 @@ const Contact = () => (
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} className="mb-3" controlId="formEmail">
+        <Form.Group as={Row} className="mb-" id="formEmail">
           <Form.Label column sm={2}>
             Adresse Email
           </Form.Label>
@@ -125,7 +125,7 @@ const Contact = () => (
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} className="mb-3" controlId="formSelect">
+        <Form.Group as={Row} className="mb-3" id="formSelect">
           <Form.Label column sm={2} htmlFor="Select">
             Je vous contacte pour:
           </Form.Label>
@@ -139,7 +139,7 @@ const Contact = () => (
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Group as={Row} className="mb-3" id="exampleForm.ControlTextarea1">
           <Form.Label column sm={2}>Message</Form.Label>
           <Col sm={10}>
             <Form.Control as="textarea" rows={3} />
