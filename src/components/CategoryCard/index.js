@@ -25,10 +25,9 @@ const CategoryCard = ({
     switch (filterType) {
       case 'region':
         dispatch(fetchEventsByRegion(id));
-        // TODO fonctionnalité pour envoyer les ID aux selects de la  searchBar en passant par
-        // TODO EventsList
-        // on redirige vers la route qui appelle eventLists et on attribue un state
-        // aux routes qui appellent des composants. Dans ce state on place le regionId.
+        // TODO functionality to send IDs to searchBar selects via EventsList
+        //  we redirect to the route that calls eventLists and we assign a state
+        //  to the routes that call components. In this state we place the regionId.
         // navigation('/resultats-evenements', { state: { regionId: id } });
         navigation('/resultats-evenements');
         // console.log(id);
@@ -41,6 +40,7 @@ const CategoryCard = ({
         break;
       default:
         // console.log('erreur');
+        navigation('*');
     }
   };
 

@@ -86,7 +86,7 @@ const eventsMiddleware = (store) => (next) => (action) => {
     default:
   }
 
-  // on passe l'action au suivant (middleware suivant ou reducer)
+  // passing the action to the next one (next middleware or reducer)
   next(action);
 };
 

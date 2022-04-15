@@ -12,13 +12,12 @@ import EventCard from '../EventCard';
 import './eventsList.scss';
 
 const EventsList = () => {
-  // TODO code pour récupérer l'id avec un useLocation (pas trouvé encore)
-  // on utilise useLocation pour récupérer le state de la route
-  // dans lequel on a stocké genreId ou genreId
-  // const location = useLocation();
-  // si location est definie, prends moi son state
-  // si le state est défini prends moi la région
-  // console.log(location.state); => renvoie null
+  // TODO code to retrieve the id with a useLocation (not found yet)
+  // we use useLocation to retrieve the state of the route
+  // in which we have stored genreId or regionId
+  // if location is defined, take me its state
+  // if the state is defined take me the region
+  // console.log(location.state); => returns null
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
 
@@ -32,8 +31,8 @@ const EventsList = () => {
   return (
     <div>
       <SearchBar
-      // on passe une string pour changer le titre en fonction de la page
-      // on passe la longueur du tableau pour dynamiser les résultats dans le titre
+      // we pass a string to change the title according to the page
+      // we pass the length of the table to boost the results in the title
         results={eventsList.length}
         message="results"
         // genreId={genreId}

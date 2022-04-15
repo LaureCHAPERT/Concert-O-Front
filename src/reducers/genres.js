@@ -8,9 +8,9 @@ const genres = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_GENRES:
       /*
-      - on crée un nouvel objet : {}
-      - on déverse dedans toutes les informations du state actuel : ...state
-      - on écrase une valeur qui provenait du state actuel
+      - create a new object : {}
+      - dumping all the information of the current state into it: ...state
+      - overwriting value from the current state
       */
       return {
         ...state, // list: state.list
