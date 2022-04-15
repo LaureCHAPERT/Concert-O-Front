@@ -12,6 +12,22 @@ const EventDetail = () => {
   const { eventDetail } = useSelector((state) => state.events);
   console.log(eventDetail);
   const dispatch = useDispatch();
+
+  const date = new Date(eventDetail.date);
+  const Dateoptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  const Houroptions = {
+    hour: 'numeric',
+    minute: 'numeric',
+  };
+  const formatDate = date.toLocaleDateString('fr-FR', Dateoptions);
+  const formatHour = date.toLocaleTimeString('fr-FR', Houroptions);
+  console.log(formatDate);
+  console.log(formatHour);
   return (
 
     <Card id="eventDetail" className="justify-content-center">
@@ -34,7 +50,7 @@ const EventDetail = () => {
           <Badge pill>{eventDetail.genres[0].name}</Badge>
         </LinkContainer>
       </div>
-      <p>{eventDetail.date}</p>
+      <div>{formatDate}</div> <div>{formatHour}</div>
       <div className="price">{eventDetail.price}€</div>
       <div className="description">{eventDetail.description}</div>
       <a href={`${eventDetail.linkTicketing}`}>Billeterie</a>
