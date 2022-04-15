@@ -1,5 +1,8 @@
 @use 'src/styles/vars';
-
+.flex-div{
+  display: flex;
+  justify-content: center;
+}
 .form-label{
   color: vars.$fontColor !important;
   font-weight: bolder;

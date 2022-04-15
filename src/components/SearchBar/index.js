@@ -75,7 +75,7 @@ const SearchBar = ({
     }
   };
   return (
-    <div>
+    <div className="flex-div">
       <Container className="searchbarContainer">
         <div className="background-title">
           <h1 className="catchPhrase">{catchPhrase}</h1>
@@ -88,6 +88,8 @@ const SearchBar = ({
                 <Form.Control
                   as="select"
                   onChange={(event) => {
+                    // on utlise numer pour faibre la distinction entre les ID des régions et la
+                    // string "tous les genres"
                     if (Number(event.target.value)) {
                       setGenreID(event.target.value);
                     }
@@ -110,6 +112,8 @@ const SearchBar = ({
                 <Form.Control
                   as="select"
                   onChange={(event) => {
+                    // on utlise numer pour faibre la distinction entre les ID des régions et la
+                    // string "toutes les régions"
                     if (Number(event.target.value)) {
                       setRegionID(event.target.value);
                     }
