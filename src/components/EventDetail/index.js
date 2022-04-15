@@ -23,8 +23,7 @@ const EventDetail = () => {
           onClick={() => {
             dispatch(fetchEventsByRegion(eventDetail.region.id));
           }}
-        >
-          <Badge pill bg="secondary">{eventDetail.region.name}</Badge>
+        ><Badge pill bg="secondary">{eventDetail.region.name}</Badge>
         </LinkContainer>
         <LinkContainer
           to="/resultats-evenements"
@@ -35,6 +34,7 @@ const EventDetail = () => {
           <Badge pill>{eventDetail.genres[0].name}</Badge>
         </LinkContainer>
       </div>
+      <p>{eventDetail.date}</p>
       <div className="price">{eventDetail.price}€</div>
       <div className="description">{eventDetail.description}</div>
       <a href={`${eventDetail.linkTicketing}`}>Billeterie</a>

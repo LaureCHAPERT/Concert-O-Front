@@ -10,21 +10,12 @@ import {
 const initialState = {
   eventsList: [],
   eventDetail: {
-    name: '',
-    image: '',
-    description: '',
     region: {
-      id: 0,
-      name: '',
     },
     genres: [
       {
-        id: 0,
-        name: '',
       },
     ],
-    price: 0,
-    linkTicketing: '',
   },
 };
 
