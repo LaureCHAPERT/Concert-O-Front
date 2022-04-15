@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,8 +11,8 @@ import {
   Col,
 } from 'react-bootstrap';
 // Import Action(s)
-import { fetchRegions } from '../../actions/regions';
-import { fetchGenres } from '../../actions/genres';
+import { fetchRegions, setSelectedRegionId } from '../../actions/regions';
+import { fetchGenres, setSelectedGenreId } from '../../actions/genres';
 import {
   fetchEventsWithSearchBar,
   fetchEventsByGenre,
@@ -22,8 +22,6 @@ import {
 import './searchBar.scss';
 
 const SearchBar = ({
-  // regionId,
-  // genreId,
   results,
   message,
 }) => {
@@ -40,8 +38,8 @@ const SearchBar = ({
   const genresList = useSelector((state) => state.genres.genresList);
   const regionsList = useSelector((state) => state.regions.regionsList);
 
-  const [regionID, setRegionID] = useState(); // regionId
-  const [genreID, setGenreID] = useState(); // genreId
+  const genreID = useSelector((state) => state.genres.selectedGenreID);
+  const regionID = useSelector((state) => state.regions.selectedRegionID);
 
   const callPhrase = () => {
     let catchPhrase;
@@ -88,13 +86,13 @@ const SearchBar = ({
                   as="select"
                   onChange={(event) => {
                     if (Number(event.target.value)) {
-                      setGenreID(event.target.value);
+                      dispatch(setSelectedGenreId(event.target.value));
                     }
                     else {
-                      setGenreID();
+                      setSelectedGenreId();
                     }
-                    // console.log(event.target.value);
                   }}
+                  value={genreID}
                 >
                   <option key="#" value={undefined}>Tous les genres</option>
                   {genresList.map((item) => (
@@ -110,12 +108,13 @@ const SearchBar = ({
                   as="select"
                   onChange={(event) => {
                     if (Number(event.target.value)) {
-                      setRegionID(event.target.value);
+                      dispatch(setSelectedRegionId(event.target.value));
                     }
                     else {
-                      setRegionID();
+                      setSelectedRegionId();
                     }
                   }}
+                  value={regionID}
                 >
                   <option key="#" value={undefined}>Toutes les régions</option>
                   {regionsList.map((item) => (

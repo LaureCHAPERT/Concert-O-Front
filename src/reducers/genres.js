@@ -1,7 +1,8 @@
-import { SAVE_GENRES } from '../actions/genres';
+import { SAVE_GENRES, SET_SELECTED_GENRE_ID } from '../actions/genres';
 
 const initialState = {
   genresList: [],
+  selectedGenreID: undefined,
 };
 
 const genres = (state = initialState, action = {}) => {
@@ -17,6 +18,11 @@ const genres = (state = initialState, action = {}) => {
         genresList: action.genres,
       };
 
+    case SET_SELECTED_GENRE_ID:
+      return {
+        ...state,
+        selectedGenreID: action.selectedID,
+      };
     default:
       return state;
   }

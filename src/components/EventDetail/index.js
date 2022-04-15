@@ -10,7 +10,6 @@ import { fetchEventsByGenre, fetchEventsByRegion } from '../../actions/events';
 
 const EventDetail = () => {
   const { eventDetail } = useSelector((state) => state.events);
-  console.log(eventDetail);
   const dispatch = useDispatch();
 
   const date = new Date(eventDetail.date);
@@ -26,8 +25,8 @@ const EventDetail = () => {
   };
   const formatDate = date.toLocaleDateString('fr-FR', Dateoptions);
   const formatHour = date.toLocaleTimeString('fr-FR', Houroptions);
-  console.log(formatDate);
-  console.log(formatHour);
+  // console.log(formatDate);
+  // console.log(formatHour);
   return (
 
     <Card id="eventDetail" className="justify-content-center">

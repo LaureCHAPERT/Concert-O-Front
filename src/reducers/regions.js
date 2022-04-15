@@ -1,9 +1,10 @@
 // import actions
-import { SAVE_REGIONS } from '../actions/regions';
+import { SAVE_REGIONS, SET_SELECTED_REGION_ID } from '../actions/regions';
 
 const initialState = {
   regionsList: [],
   regionName: '',
+  selectedRegionID: undefined,
 };
 
 const regions = (state = initialState, action = {}) => {
@@ -18,6 +19,12 @@ const regions = (state = initialState, action = {}) => {
       return {
         ...state, // regions: state.regions
         regionsList: action.regions,
+      };
+
+    case SET_SELECTED_REGION_ID:
+      return {
+        ...state,
+        selectedRegionID: action.selectedID,
       };
 
     default:
