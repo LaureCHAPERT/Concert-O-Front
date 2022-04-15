@@ -52,7 +52,7 @@ const SearchBar = ({
       catchPhrase = 'Bienvenue sur Concert\'o';
       break;
     default:
-      console.log('erreur');
+      navigation('*');
   }
 
   // on change la fonction dispatchée en fonction des id, présents ou non

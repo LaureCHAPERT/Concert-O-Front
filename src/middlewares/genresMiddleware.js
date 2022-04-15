@@ -1,10 +1,12 @@
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 // import { URL } from '../../config';
 import {
   FETCH_GENRES, saveGenres,
 } from '../actions/genres';
 
 const genresMiddleware = (store) => (next) => (action) => {
+  const navigation = useNavigate();
   // console.log('on a intercepté une action dans le middleware: ', action);
 
   switch (action.type) {
@@ -17,6 +19,7 @@ const genresMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
+          navigation('*');
         });
       break;
 
