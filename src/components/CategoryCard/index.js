@@ -40,7 +40,7 @@ const CategoryCard = ({
         navigation('/resultats-evenements');
         break;
       default:
-        console.log('erreur');
+        // console.log('erreur');
     }
   };
 
