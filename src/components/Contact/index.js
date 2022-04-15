@@ -6,6 +6,10 @@ import {
   Row,
   Card,
 } from 'react-bootstrap';
+import Elise from 'src/assets/images/Elise.jpg';
+import Jeremy from 'src/assets/images/Jeremy.jpg';
+import Laure from 'src/assets/images/Laure.jpg';
+import Victor from 'src/assets/images/Victor.jpg';
 
 const Contact = () => (
   <div>
@@ -13,7 +17,7 @@ const Contact = () => (
       <Row>
         <Col xs={12} md={6} xl={3} className="d-flex justify-content-center">
           <Card className="contact-card">
-            <Card.Img className="contact-img" variant="top" src="#" />
+            <Card.Img className="contact-img" variant="top" src={Elise} />
             <Card.Body>
               <Card.Title>Elise </Card.Title>
               <Card.Text>
@@ -27,7 +31,7 @@ const Contact = () => (
 
         <Col xs={12} md={6} xl={3} className="d-flex justify-content-center">
           <Card className="contact-card">
-            <Card.Img className="contact-img" variant="top" src="#" />
+            <Card.Img className="contact-img" variant="top" src={Jeremy} />
             <Card.Body>
               <Card.Title>Jérémy </Card.Title>
               <Card.Text>
@@ -41,7 +45,7 @@ const Contact = () => (
 
         <Col xs={12} md={6} xl={3} className="d-flex justify-content-center">
           <Card className="contact-card">
-            <Card.Img className="contact-img" variant="top" src="#" />
+            <Card.Img className="contact-img" variant="top" src={Laure} />
             <Card.Body>
               <Card.Title>Laure </Card.Title>
               <Card.Text>
@@ -55,7 +59,7 @@ const Contact = () => (
 
         <Col xs={12} md={6} xl={3} className="d-flex justify-content-center">
           <Card className="contact-card">
-            <Card.Img className="contact-img" variant="top" src="#" />
+            <Card.Img className="contact-img" variant="top" src={Victor} />
             <Card.Body>
               <Card.Title>Victor </Card.Title>
               <Card.Text>
