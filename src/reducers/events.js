@@ -14,10 +14,12 @@ const initialState = {
     image: '',
     description: '',
     region: {
+      id: 0,
       name: '',
     },
     genres: [
       {
+        id: 0,
         name: '',
       },
     ],

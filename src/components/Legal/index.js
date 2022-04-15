@@ -20,7 +20,7 @@ const Legal = () => (
     </div>
     <div className="legal-div">
       <h3>Crédit</h3>
-      <p>Images du site libres de droits</p>
+      <p>Images libres de droits provenant du site Pixabay </p>
     </div>
     <div className="legal-div">
       <h3>Objectif et qualité des contenus</h3>
