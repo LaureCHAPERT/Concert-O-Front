@@ -1,6 +1,5 @@
 import axios from 'axios';
 // import { URL } from '../../config';
-import { useNavigate } from 'react-router-dom';
 import {
   FETCH_EVENTS_BY_GENRE,
   saveEventsByGenre,
@@ -17,7 +16,6 @@ import {
 } from '../actions/events';
 
 const eventsMiddleware = (store) => (next) => (action) => {
-  const navigation = useNavigate();
   switch (action.type) {
     case FETCH_EVENTS_BY_GENRE:
       // We send request to the API in order to get an event list filtered by genres
@@ -28,7 +26,6 @@ const eventsMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
-          navigation('*');
         });
       break;
     case FETCH_DETAIL_EVENT:
@@ -40,7 +37,6 @@ const eventsMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
-          navigation('*');
         });
       break;
     case FETCH_EVENTS_ON_HOMEPAGE:
@@ -52,7 +48,6 @@ const eventsMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
-          navigation('*');
         });
       break;
     case FETCH_EVENTS_BY_REGION:
@@ -63,7 +58,6 @@ const eventsMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
-          navigation('*');
         });
       break;
     case FETCH_EVENTS_WITH_SEARCHBAR:
@@ -92,7 +86,7 @@ const eventsMiddleware = (store) => (next) => (action) => {
     default:
   }
 
-  // on passe l'action au suivant (middleware suivant ou reducer)
+  // passing the action to the next one (next middleware or reducer)
   next(action);
 };
 
