@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 // import react-Bootstrap's component(s)
 import {
@@ -27,7 +27,12 @@ const EventsList = () => {
   const indexofFirstPost = indexOfLastPost - postsPerPage;
   const currentEvents = eventsList.slice(indexofFirstPost, indexOfLastPost);
   // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const pageTopRef = useRef(null);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    pageTopRef.current.scrollIntoView();
+  };
   return (
     <div>
       <SearchBar
@@ -38,7 +43,7 @@ const EventsList = () => {
         // genreId={genreId}
         // regionId={regionId}
       />
-      <Row>
+      <Row ref={pageTopRef}>
         {currentEvents.map((item) => (
           <EventCard key={item.id} {...item} />
         ))}

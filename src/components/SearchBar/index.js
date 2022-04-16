@@ -56,19 +56,15 @@ const SearchBar = ({
   const callback = () => {
     if (!regionID && genreID) {
       dispatch(fetchEventsByGenre(genreID));
-      // console.log(genreID, regionID);
     }
     else if (!genreID && regionID) {
       dispatch(fetchEventsByRegion(regionID));
-      // console.log(genreID, regionID);
     }
     else if (genreID && regionID) {
       dispatch(fetchEventsWithSearchBar(genreID, regionID));
-      // console.log(genreID, regionID);
     }
     else {
       dispatch(fetchAllEvents());
-      // console.log(genreID, regionID);
     }
   };
   return (
