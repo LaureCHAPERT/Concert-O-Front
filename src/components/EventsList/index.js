@@ -1,23 +1,29 @@
-import { useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useRef, useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 // import react-Bootstrap's component(s)
 import {
   Row,
 } from 'react-bootstrap';
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import SearchBar from 'src/components/SearchBar';
 import Pagination from 'src/components/Pagination';
 import EventCard from '../EventCard';
+import { fetchAllEvents } from '../../actions/events';
 
 import './eventsList.scss';
 
 const EventsList = () => {
-  // TODO code to retrieve the id with a useLocation (not found yet)
-  // we use useLocation to retrieve the state of the route
-  // in which we have stored genreId or regionId
-  // if location is defined, take me its state
-  // if the state is defined take me the region
-  // console.log(location.state); => returns null
+  const location = useLocation();
+  const dispatch = useDispatch();
+  // conserver les événements au refresh avec useEffect();
+  useEffect(() => {
+    if (location.pathname === '/tous-les-evenements') {
+      dispatch(fetchAllEvents());
+    }
+    else {
+      console.log('coucou');
+    }
+  }, []);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
 

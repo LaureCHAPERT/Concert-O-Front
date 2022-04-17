@@ -22,7 +22,8 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchEventsOnHomepage());
   }, []);
-
+  // reset des select sur toutes les regions et tous les genres quand on revient sur la
+  // page d'accueil : ça fonctionne. Pb => erreur en console
   // dispatch(setSelectedGenreId());
   // dispatch(setSelectedRegionId());
 
