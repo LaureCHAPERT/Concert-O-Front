@@ -27,7 +27,6 @@ const SearchBar = ({
 }) => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
-
   // console.log(results);
   // We launch the  API call to recover regions and genres in selects
   useEffect(() => {
@@ -85,7 +84,7 @@ const SearchBar = ({
                       dispatch(setSelectedGenreId(event.target.value));
                     }
                     else {
-                      setSelectedGenreId();
+                      dispatch(setSelectedGenreId());
                     }
                   }}
                   value={genreID}
@@ -107,7 +106,7 @@ const SearchBar = ({
                       dispatch(setSelectedRegionId(event.target.value));
                     }
                     else {
-                      setSelectedRegionId();
+                      dispatch(setSelectedRegionId());
                     }
                   }}
                   value={regionID}

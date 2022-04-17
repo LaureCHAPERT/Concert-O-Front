@@ -49,9 +49,12 @@ const Contact = () => (
             <Card.Body>
               <Card.Title>Laure </Card.Title>
               <Card.Text>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Rem iure eos nihil veritatis nulla dolores ipsa beatae laudantium,
-                sed error amet magnam saepe explicabo asperiores quas vitae nemo voluptate.
+                Anciennement technicienne son et lumière dans un théâtre et passionnée par le mixage
+                et  la musique  assisitée par ordinateur, le spectacle vivant fait partie de l'ADN
+                de Laure.
+                Amoureuse de musiques en tous genres  et guitariste depuis son adolescence,
+                c'est tout naturellement qu'elle a eu l'idée d'un projet portant sur sa
+                toute première passion.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -135,7 +138,7 @@ const Contact = () => (
           </Form.Label>
           <Col sm={10}>
             <Form.Select id="Select">
-              <option>choisir...</option>
+              <option>---</option>
               <option>Un problème sur le site</option>
               <option>Je suis un organisme, je veux m'inscrire</option>
               <option>Autre</option>
@@ -152,7 +155,7 @@ const Contact = () => (
 
         <Form.Group as={Row} className="mb-3">
           <Col sm={{ span: 10, offset: 2 }}>
-            <Button type="submit">Envoyé</Button>
+            <Button type="submit">Envoyer</Button>
           </Col>
         </Form.Group>
       </Form>

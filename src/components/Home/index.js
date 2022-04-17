@@ -9,15 +9,22 @@ import {
 import SearchBar from 'src/components/SearchBar';
 import EventCard from '../EventCard';
 import { fetchEventsOnHomepage } from '../../actions/events';
+// import { setSelectedRegionId } from '../../actions/regions';
+// import { setSelectedGenreId } from '../../actions/genres';
 
 import './home.scss';
 
 const Home = () => {
   const dispatch = useDispatch();
+
   const { eventsList } = useSelector((state) => state.events);
+
   useEffect(() => {
     dispatch(fetchEventsOnHomepage());
   }, []);
+
+  // dispatch(setSelectedGenreId());
+  // dispatch(setSelectedRegionId());
 
   return (
     <div>
