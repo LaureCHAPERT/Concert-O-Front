@@ -26,7 +26,7 @@ const EventsList = () => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexofFirstPost = indexOfLastPost - postsPerPage;
   const currentEvents = eventsList.slice(indexofFirstPost, indexOfLastPost);
-  // Change page
+  // Change page and scroll top top with useRef()
   const pageTopRef = useRef(null);
 
   const paginate = (pageNumber) => {

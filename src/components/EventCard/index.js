@@ -20,7 +20,7 @@ const EventCard = ({
   // const slug = useSelector((state) => state.events.eventDetail.slug);
   return (
     <Col sm={12} md={6} xl={4} className="d-flex justify-content-center" onClick={() => dispatch(fetchDetailEvent(id))}>
-      <LinkContainer to={`/evenement/${slug}`}>
+      <LinkContainer to={`/evenement/${slug}`} style={{ cursor: 'pointer' }}>
         <Card className="events-card">
           <Card.Img className="events-img" variant="top" src={image} />
           <Card.Body>

@@ -32,7 +32,7 @@ const eventsMiddleware = (store) => (next) => (action) => {
       // We send request to the API in order to get an event detail
       axios.get(`http://laure-chapert.vpnuser.lan:8000/api/event/${action.id}`)
         .then((response) => {
-          // console.log(response.data);
+          console.log(response.data);
           store.dispatch(saveDetailEvent(response.data));
         })
         .catch((error) => {
