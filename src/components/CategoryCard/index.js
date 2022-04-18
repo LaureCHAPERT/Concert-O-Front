@@ -27,6 +27,7 @@ const CategoryCard = ({
     switch (filterType) {
       case 'region':
         dispatch(fetchEventsByRegion(id));
+
         dispatch(setSelectedRegionId(id));
         dispatch(setSelectedGenreId());
         navigation('/resultats-evenements');
@@ -34,8 +35,9 @@ const CategoryCard = ({
         break;
       case 'genre':
         dispatch(fetchEventsByGenre(id));
+
         dispatch(setSelectedGenreId(id));
-        dispatch(fetchEventsByRegion());
+        dispatch(setSelectedRegionId());
         navigation('/resultats-evenements');
         break;
       default:
