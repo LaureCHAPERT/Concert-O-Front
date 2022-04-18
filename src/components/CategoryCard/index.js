@@ -7,6 +7,8 @@ import {
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { fetchEventsByGenre, fetchEventsByRegion } from '../../actions/events';
+import { setSelectedRegionId } from '../../actions/regions';
+import { setSelectedGenreId } from '../../actions/genres';
 // import styles
 import './categoryCard.scss';
 
@@ -25,11 +27,15 @@ const CategoryCard = ({
     switch (filterType) {
       case 'region':
         dispatch(fetchEventsByRegion(id));
+        dispatch(setSelectedRegionId(id));
+        dispatch(setSelectedGenreId());
         navigation('/resultats-evenements');
         // console.log(id);
         break;
       case 'genre':
         dispatch(fetchEventsByGenre(id));
+        dispatch(setSelectedGenreId(id));
+        dispatch(fetchEventsByRegion());
         navigation('/resultats-evenements');
         break;
       default:
