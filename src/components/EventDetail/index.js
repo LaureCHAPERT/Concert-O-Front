@@ -19,14 +19,8 @@ const EventDetail = () => {
     month: 'long',
     day: 'numeric',
   };
-  const Houroptions = {
-    hour: 'numeric',
-    minute: 'numeric',
-  };
   const formatDate = date.toLocaleDateString('fr-FR', Dateoptions);
-  const formatHour = date.toLocaleTimeString('fr-FR', Houroptions);
-  // console.log(formatDate);
-  // console.log(formatHour);
+
   return (
 
     <Card id="eventDetail" className="justify-content-center">
@@ -49,7 +43,7 @@ const EventDetail = () => {
           <Badge pill>{eventDetail.genres[0].name}</Badge>
         </LinkContainer>
       </div>
-      <div>{formatDate}</div> <div>{formatHour}</div>
+      <div>{formatDate}</div> <div>{eventDetail.hour}</div>
       <div className="price">{eventDetail.price}€</div>
       <div className="description">{eventDetail.description}</div>
       <a href={`${eventDetail.linkTicketing}`}>Billeterie</a>
