@@ -9,6 +9,8 @@ import SearchBar from 'src/components/SearchBar';
 import Pagination from 'src/components/Pagination';
 import EventCard from '../EventCard';
 import { fetchAllEvents } from '../../actions/events';
+// import { setSelectedRegionId } from '../../actions/regions';
+// import { setSelectedGenreId } from '../../actions/genres';
 
 import './eventsList.scss';
 
@@ -19,9 +21,11 @@ const EventsList = () => {
   useEffect(() => {
     if (location.pathname === '/tous-les-evenements') {
       dispatch(fetchAllEvents());
+      // dispatch(setSelectedGenreId());
+      // dispatch(setSelectedRegionId());
     }
     else {
-      console.log('coucou');
+      //  console.log('coucou');
     }
   }, []);
   const [currentPage, setCurrentPage] = useState(1);
@@ -46,8 +50,6 @@ const EventsList = () => {
       // we pass the length of the table to boost the results in the title
         results={eventsList.length}
         message="results"
-        // genreId={genreId}
-        // regionId={regionId}
       />
       <Row ref={pageTopRef}>
         {currentEvents.map((item) => (

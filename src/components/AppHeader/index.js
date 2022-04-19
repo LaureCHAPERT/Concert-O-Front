@@ -8,6 +8,8 @@ import { useDispatch } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 import logo from 'src/assets/images/logo.png';
 import { fetchAllEvents } from '../../actions/events';
+import { setSelectedRegionId } from '../../actions/regions';
+import { setSelectedGenreId } from '../../actions/genres';
 import './appHeader.scss';
 
 const AppHeader = () => {
@@ -28,7 +30,13 @@ const AppHeader = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav " placement="right">
             <Nav className="flex-grow-1 justify-content-evenly">
-              <LinkContainer to="/">
+              <LinkContainer
+                to="/"
+                onClick={() => {
+                  dispatch(setSelectedGenreId());
+                  dispatch(setSelectedRegionId());
+                }}
+              >
                 <Nav.Link className="navlink-header">Accueil</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/genres">
@@ -41,6 +49,8 @@ const AppHeader = () => {
                 to="/tous-les-evenements"
                 onClick={() => {
                   dispatch(fetchAllEvents());
+                  // dispatch(setSelectedGenreId());
+                  // dispatch(setSelectedRegionId());
                 }}
               >
                 <Nav.Link className="navlink-header">Tous les événements</Nav.Link>
