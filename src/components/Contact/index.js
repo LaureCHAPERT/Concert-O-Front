@@ -14,6 +14,9 @@ import Victor from 'src/assets/images/Victor.jpg';
 const Contact = () => (
   <div>
     <div className="contact-card">
+      <div className="presentation-div">
+        <h1 id="presentation"> Qui sommes-nous ?</h1>
+      </div>
       <Row>
         <Col xs={12} md={6} xl={3} className="d-flex justify-content-center">
           <Card className="contact-card">
@@ -84,24 +87,28 @@ const Contact = () => (
           <Form.Group as={Row} className="mb-3">
             <Form.Label as="legend" column sm={2} />
             <Col sm={10}>
-              <Form.Check
-                type="radio"
-                label="Madame"
-                name="Madame"
-                id="radio1"
-              />
-              <Form.Check
-                type="radio"
-                label="Monsieur"
-                name="Monsieur"
-                id="radio2"
-              />
-              <Form.Check
-                type="radio"
-                label="Société ou Organisme"
-                name="Soiété ou Organisme"
-                id="radio3"
-              />
+              {['radio'].map((type) => (
+                <div key={`inline-${type}`} className="mb-3">
+                  <Form.Check
+                    type={type}
+                    label="Madame"
+                    name="group1"
+                    id="radio1"
+                  />
+                  <Form.Check
+                    type={type}
+                    label="Monsieur"
+                    name="group1"
+                    id="radio2"
+                  />
+                  <Form.Check
+                    type={type}
+                    label="Société ou Organisme"
+                    name="group1"
+                    id="radio3"
+                  />
+                </div>
+              ))}
             </Col>
           </Form.Group>
         </fieldset>
