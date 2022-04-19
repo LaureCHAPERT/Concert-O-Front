@@ -21,11 +21,6 @@ const EventsList = () => {
   useEffect(() => {
     if (location.pathname === '/tous-les-evenements') {
       dispatch(fetchAllEvents());
-      // dispatch(setSelectedGenreId());
-      // dispatch(setSelectedRegionId());
-    }
-    else {
-      //  console.log('coucou');
     }
   }, []);
   const [currentPage, setCurrentPage] = useState(1);

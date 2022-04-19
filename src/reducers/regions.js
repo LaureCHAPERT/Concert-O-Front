@@ -3,7 +3,6 @@ import { SAVE_REGIONS, SET_SELECTED_REGION_ID } from '../actions/regions';
 
 const initialState = {
   regionsList: [],
-  regionName: '',
   selectedRegionID: undefined,
 };
 

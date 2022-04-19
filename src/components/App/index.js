@@ -12,6 +12,7 @@ import EventsList from '../EventsList';
 import Legal from '../Legal';
 import Contact from '../Contact';
 import NotFound from '../NotFound';
+import AllEventsPage from '../AllEventsPage';
 import './app.scss';
 
 // == Component
@@ -26,7 +27,7 @@ const App = () => (
       <Route path="/mentions-legales" element={<Legal />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/resultats-evenements" element={<EventsList />} />
-      <Route path="/tous-les-evenements" element={<EventsList />} />
+      <Route path="/tous-les-evenements" element={<AllEventsPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer />

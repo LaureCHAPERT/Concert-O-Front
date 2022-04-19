@@ -19,6 +19,8 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchEventsOnHomepage());
   }, []);
+  // dispatch(setSelectedGenreId());
+  // dispatch(setSelectedRegionId());
 
   return (
     <div>
