@@ -34,6 +34,7 @@ const EventDetail = () => {
       <div className="">
         <h2 className="title">{eventDetail.name}</h2>
         <LinkContainer
+          style={{ cursor: 'pointer' }}
           to="/resultats-evenements"
           onClick={() => {
             dispatch(fetchEventsByRegion(eventDetail.region.id));
@@ -41,6 +42,7 @@ const EventDetail = () => {
         ><Badge pill bg="secondary">{eventDetail.region.name}</Badge>
         </LinkContainer>
         <LinkContainer
+          style={{ cursor: 'pointer' }}
           to="/resultats-evenements"
           onClick={() => {
             dispatch(fetchEventsByGenre(eventDetail.genres[0].id));

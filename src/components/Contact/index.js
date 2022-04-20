@@ -38,9 +38,9 @@ const Contact = () => (
             <Card.Body>
               <Card.Title>Jérémy </Card.Title>
               <Card.Text>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Rem iure eos nihil veritatis nulla dolores ipsa beatae laudantium,
-                sed error amet magnam saepe explicabo asperiores quas vitae nemo voluptate.
+                Jérémy écoute depuis toujours de la musique pour se détendre et rêver.
+                Ce fût donc tout naturellement qu'il se tourna vers ce projet
+                ambitieux et motivant.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -69,9 +69,12 @@ const Contact = () => (
             <Card.Body>
               <Card.Title>Victor </Card.Title>
               <Card.Text>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Rem iure eos nihil veritatis nulla dolores ipsa beatae laudantium,
-                sed error amet magnam saepe explicabo asperiores quas vitae nemo voluptate.
+                Passionné de musique depuis toujours et compositeur amateur
+                à ses heures perdues (M.A.O, piano..), Victor a également
+                travaillé en tant que technicien son/lumière en bénévolat
+                puis en stages avant de s'orienter dans le milieu informatique.
+                Il était donc évident pour nous comme pour lui de se joindre
+                au projet afin de de partager sa passion liée à la musique !
               </Card.Text>
             </Card.Body>
           </Card>

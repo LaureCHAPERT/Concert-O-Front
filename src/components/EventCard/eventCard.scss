@@ -11,6 +11,10 @@
   transition: all 0.3s; 
   border-radius: 2rem !important;
   transform: scale(1.03);
+  .events-img{
+      transition: all 0.3s; 
+      border-radius: 2rem 2rem 0rem 0rem !important;
+  }
 }
 .events-button{
   margin-top: 1rem;
