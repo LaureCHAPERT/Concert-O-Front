@@ -20,14 +20,15 @@
 .events-card{
   min-width: 33%;
   padding-bottom: 10%;
+
 }
 .events-img{
-  clip-path:circle(30%);
   opacity: 100%;
-  height: -webkit-fill-available;
+  object-fit: cover;
+  max-height: 15em;
 }
 .events-text{
-  overflow:hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
    -webkit-line-clamp: 2;
