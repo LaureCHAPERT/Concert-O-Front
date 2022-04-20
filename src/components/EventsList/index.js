@@ -9,8 +9,6 @@ import SearchBar from 'src/components/SearchBar';
 import Pagination from 'src/components/Pagination';
 import EventCard from '../EventCard';
 import { fetchAllEvents } from '../../actions/events';
-// import { setSelectedRegionId } from '../../actions/regions';
-// import { setSelectedGenreId } from '../../actions/genres';
 
 import './eventsList.scss';
 

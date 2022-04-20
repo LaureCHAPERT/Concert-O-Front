@@ -139,12 +139,8 @@ const SearchBar = ({
 
 SearchBar.defaultProps = {
   results: 0,
-  // genreId: 0,
-  // regionId: 0,
 };
 SearchBar.propTypes = {
-  // genreId: PropTypes.number,
-  // regionId: PropTypes.number,
   results: PropTypes.number,
   message: PropTypes.string.isRequired,
 };
