@@ -13,13 +13,19 @@ const EventDetail = () => {
   const dispatch = useDispatch();
 
   const date = new Date(eventDetail.date);
+  const hour = new Date(eventDetail.hour);
   const Dateoptions = {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   };
+  const Houroptions = {
+    hour: 'numeric',
+    minute: 'numeric',
+  };
   const formatDate = date.toLocaleDateString('fr-FR', Dateoptions);
+  const formatHour = hour.toLocaleTimeString('fr-FR', Houroptions);
 
   return (
 
@@ -43,7 +49,7 @@ const EventDetail = () => {
           <Badge pill>{eventDetail.genres[0].name}</Badge>
         </LinkContainer>
       </div>
-      <div>{formatDate}</div> <div>{eventDetail.hour}</div>
+      <div>{formatDate}</div> <div>{formatHour}</div>
       <div className="price">{eventDetail.price}€</div>
       <div className="description">{eventDetail.description}</div>
       <a href={`${eventDetail.linkTicketing}`}>Billeterie</a>
