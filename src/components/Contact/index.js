@@ -24,9 +24,10 @@ const Contact = () => (
             <Card.Body>
               <Card.Title>Elise </Card.Title>
               <Card.Text>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Rem iure eos nihil veritatis nulla dolores ipsa beatae laudantium,
-                sed error amet magnam saepe explicabo asperiores quas vitae nemo voluptate.
+                Mélomane, amatrice de concerts et de festivals. Ayant été bénévole
+                d'un petit festival local. Vivant en ruralité elle a conscience que trouver les
+                dates d'un concert n'est pas toujours chose aisée.
+                En collabarotion avec Laure l'idée de ce site  a été une évidence pour elles.
               </Card.Text>
             </Card.Body>
           </Card>
