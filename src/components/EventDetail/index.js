@@ -7,6 +7,8 @@ import {
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { fetchEventsByGenre, fetchEventsByRegion } from '../../actions/events';
+import { setSelectedRegionId } from '../../actions/regions';
+import { setSelectedGenreId } from '../../actions/genres';
 
 const EventDetail = () => {
   const { eventDetail } = useSelector((state) => state.events);
@@ -38,6 +40,8 @@ const EventDetail = () => {
           to="/resultats-evenements"
           onClick={() => {
             dispatch(fetchEventsByRegion(eventDetail.region.id));
+            dispatch(setSelectedRegionId(eventDetail.region.id));
+            dispatch(setSelectedGenreId());
           }}
         ><Badge pill bg="secondary">{eventDetail.region.name}</Badge>
         </LinkContainer>
@@ -46,6 +50,8 @@ const EventDetail = () => {
           to="/resultats-evenements"
           onClick={() => {
             dispatch(fetchEventsByGenre(eventDetail.genres[0].id));
+            dispatch(setSelectedGenreId(eventDetail.genres[0].id));
+            dispatch(setSelectedRegionId());
           }}
         >
           <Badge pill>{eventDetail.genres[0].name}</Badge>

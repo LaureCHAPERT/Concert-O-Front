@@ -46,7 +46,7 @@ const SearchBar = ({
       catchPhrase = 'Bienvenue sur Concert\'o';
     }
     else {
-      catchPhrase = `Il y a ${results} résultat(s) à votre recherche `;
+      catchPhrase = ` ${results} concert(s) trouvés `;
     }
     return catchPhrase;
   };

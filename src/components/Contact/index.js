@@ -27,7 +27,7 @@ const Contact = () => (
                 Mélomane, amatrice de concerts et de festivals. Ayant été bénévole
                 d'un petit festival local. Vivant en ruralité elle a conscience que trouver les
                 dates d'un concert n'est pas toujours chose aisée.
-                En collabarotion avec Laure l'idée de ce site  a été une évidence pour elles.
+                En collabarotion avec Laure l'idée de ce site  a été une évidence pour elle.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -75,7 +75,7 @@ const Contact = () => (
                 travaillé en tant que technicien son/lumière en bénévolat
                 puis en stages avant de s'orienter dans le milieu informatique.
                 Il était donc évident pour nous comme pour lui de se joindre
-                au projet afin de de partager sa passion liée à la musique !
+                au projet afin de partager sa passion liée à la musique !
               </Card.Text>
             </Card.Body>
           </Card>
