@@ -11,6 +11,9 @@
   transition: all 0.3s; 
   border-radius: 2rem !important;
   transform: scale(1.03);
+  .events-img{
+    border-radius: 2rem 2rem 0 0 !important;
+  }
 }
 .events-button{
   margin-top: 1rem;
@@ -28,6 +31,7 @@
   max-height: 15em;
   min-height: 15em;
 }
+
 .events-text{
   overflow: hidden;
   text-overflow: ellipsis;
