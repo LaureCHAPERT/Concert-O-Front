@@ -57,7 +57,7 @@ const EventDetail = () => {
           <Badge pill>{eventDetail.genres[0].name}</Badge>
         </LinkContainer>
       </div>
-      <div>{formatDate}</div> <div>{formatHour}</div>
+      <div className="date">{formatDate}</div> <div>{formatHour}</div>
       <div className="price">{eventDetail.price}€</div>
       <div className="description">{eventDetail.description}</div>
       <a href={`${eventDetail.linkTicketing}`}>Billeterie</a>
