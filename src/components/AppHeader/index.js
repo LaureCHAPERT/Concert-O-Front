@@ -14,7 +14,7 @@ import logo from 'src/assets/images/logo.png';
 import { fetchAllEvents } from '../../actions/events';
 import { setSelectedRegionId } from '../../actions/regions';
 import { setSelectedGenreId } from '../../actions/genres';
-import { changeEmail, changePassword } from '../../actions/user';
+import { changeEmail, changePassword, logIn } from '../../actions/user';
 import './appHeader.scss';
 
 const AppHeader = () => {
@@ -96,6 +96,7 @@ const AppHeader = () => {
             >
               <Form.Label>Mot de passe</Form.Label>
               <Form.Control
+                type="password"
                 password={passwordValue}
                 onChange={(event) => {
                   // console.log(event.target.value);
@@ -107,7 +108,13 @@ const AppHeader = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary">
+          <Button
+            variant="secondary"
+            onClick={() => {
+              dispatch(logIn());
+              dispatch(handleClose());
+            }}
+          >
             Valider
           </Button>
           <LinkContainer
