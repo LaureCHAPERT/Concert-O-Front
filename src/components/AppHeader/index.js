@@ -3,7 +3,11 @@ import {
   Container,
   Navbar,
   Nav,
+  Modal,
+  Button,
+  Form,
 } from 'react-bootstrap';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 import logo from 'src/assets/images/logo.png';
@@ -14,6 +18,10 @@ import './appHeader.scss';
 
 const AppHeader = () => {
   const dispatch = useDispatch();
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div>
       <Navbar id="mainNav" expand="lg">
@@ -55,10 +63,43 @@ const AppHeader = () => {
               >
                 <Nav.Link className="navlink-header">Tous les événements</Nav.Link>
               </LinkContainer>
+              <Nav.Link className="navlink-header " onClick={handleShow}>Me connecter</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Me connecter</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Mot de passe</Form.Label>
+              <Form.Control as="textarea" />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary">
+            Valider
+          </Button>
+          <Button variant="primary">
+            Pas encore inscrit ? Cliquez ici
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
 
   );
