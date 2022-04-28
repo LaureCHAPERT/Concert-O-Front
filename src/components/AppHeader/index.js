@@ -8,17 +8,20 @@ import {
   Form,
 } from 'react-bootstrap';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 import logo from 'src/assets/images/logo.png';
 import { fetchAllEvents } from '../../actions/events';
 import { setSelectedRegionId } from '../../actions/regions';
 import { setSelectedGenreId } from '../../actions/genres';
+import { changeEmail, changePassword } from '../../actions/user';
 import './appHeader.scss';
 
 const AppHeader = () => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const emailValue = useSelector((state) => state.user.email);
+  const passwordValue = useSelector((state) => state.user.password);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -80,6 +83,11 @@ const AppHeader = () => {
                 type="email"
                 placeholder="name@example.com"
                 autoFocus
+                email={emailValue}
+                onChange={(event) => {
+                  // console.log(event.target.value);
+                  dispatch(changeEmail(event.target.value));
+                }}
               />
             </Form.Group>
             <Form.Group
@@ -87,7 +95,14 @@ const AppHeader = () => {
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label>Mot de passe</Form.Label>
-              <Form.Control />
+              <Form.Control
+                password={passwordValue}
+                onChange={(event) => {
+                  // console.log(event.target.value);
+                  dispatch(changePassword(event.target.value));
+                }}
+
+              />
             </Form.Group>
           </Form>
         </Modal.Body>
