@@ -87,7 +87,7 @@ const AppHeader = () => {
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label>Mot de passe</Form.Label>
-              <Form.Control as="textarea" />
+              <Form.Control />
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -95,9 +95,13 @@ const AppHeader = () => {
           <Button variant="secondary">
             Valider
           </Button>
-          <Button variant="primary">
-            Pas encore inscrit ? Cliquez ici
-          </Button>
+          <LinkContainer
+            to="/inscription"
+          >
+            <Button onClick={handleClose} variant="primary">
+              Pas encore inscrit ? Cliquez ici
+            </Button>
+          </LinkContainer>
         </Modal.Footer>
       </Modal>
     </div>

@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 // == Import components
 import Home from 'src/components/Home';
+import Subscribe from '../Subscribe';
 import Footer from '../Footer';
 import AppHeader from '../AppHeader';
 import Regions from '../Regions';
@@ -21,6 +22,7 @@ const App = () => (
     <AppHeader />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/inscription" element={<Subscribe />} />
       <Route path="/regions" element={<Regions />} />
       <Route path="/genres" element={<Genres />} />
       <Route path="/evenement/:slug" element={<EventDetail />} />
