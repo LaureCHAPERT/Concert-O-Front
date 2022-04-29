@@ -10,9 +10,9 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancers = composeEnhancers(
   applyMiddleware(
     genresMiddleware,
-    regionsMiddleware,
     eventsMiddleware,
     userMiddleware,
+    regionsMiddleware,
   ),
 );
 const store = createStore(

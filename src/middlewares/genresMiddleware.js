@@ -6,7 +6,6 @@ import {
 
 const genresMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware: ', action);
-
   switch (action.type) {
     case FETCH_GENRES:
     // We send request to the API in order to get genres list
@@ -21,6 +20,7 @@ const genresMiddleware = (store) => (next) => (action) => {
       break;
 
     default:
+      break;
   }
 
   // on passe l'action au suivant (middleware suivant ou reducer)

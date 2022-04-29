@@ -16,6 +16,7 @@ const regionsMiddleware = (store) => (next) => (action) => {
       break;
 
     default:
+      break;
   }
 
   // on passe l'action au suivant (middleware suivant ou reducer)

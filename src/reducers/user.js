@@ -6,6 +6,7 @@ export const initialState = {
   password: '',
   username: '',
   token: null,
+  errorMessage: '',
 };
 
 const user = (state = initialState, action = {}) => {

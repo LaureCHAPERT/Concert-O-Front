@@ -22,20 +22,25 @@ const AppHeader = () => {
   const [show, setShow] = useState(false);
   const emailValue = useSelector((state) => state.user.email);
   const passwordValue = useSelector((state) => state.user.password);
-  const nickname = useSelector((state) => state.user.username);
+  // const token = localStorage.getItem('token');
   const token = useSelector((state) => state.user.token);
   const callLogin = () => {
     let isLogged;
-    if (token !== null) {
-      isLogged = `Bienvenue ${nickname}`;
+    if (token === null) {
+      isLogged = 'Se connecter';
     }
     else {
-      isLogged = 'Se connecter';
+      isLogged = 'Se déconnecter';
     }
     return isLogged;
   };
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleOpen = () => setShow(true);
+  const logOut = () => {
+    // localStorage.clear();
+    localStorage.setItem('token', null);
+    window.location.href = '/';
+  };
   return (
     <div>
       <Navbar id="mainNav" expand="lg">
@@ -77,7 +82,18 @@ const AppHeader = () => {
               >
                 <Nav.Link className="navlink-header">Tous les événements</Nav.Link>
               </LinkContainer>
-              <Nav.Link className="navlink-header " onClick={handleShow}>{callLogin()}</Nav.Link>
+              <Nav.Link
+                className="navlink-header "
+                onClick={() => {
+                  if (token !== null) {
+                    dispatch(logOut());
+                  }
+                  else {
+                    dispatch(handleOpen());
+                  }
+                }}
+              >{callLogin()}
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -20,16 +20,22 @@ const userMiddleware = (store) => (next) => (action) => {
           // eslint-disable-next-line prefer-destructuring
           const token = response.data.token;
           const user = jwt(token);
-          console.log(user.username);
+          // console.log(user.username);
+          localStorage.setItem('token', token);
+          // console.log(localStorage);
           store.dispatch(saveUserData(user.username, response.data.token));
         })
         .catch((error) => {
-          // TODO afficher une erreur à l'utilisateur
+          const message = store.getState().user.errorMessage;
+          // eslint-disable-next-line max-len
+          // this.setState({ errorMessage: 'Votre e-mail ou votre mot de passe comporte une erreur ' });
+          console.log(message);
           console.log(error);
         });
       break;
 
     default:
+      break;
   }
 
   // on passe l'action au suivant (middleware suivant ou reducer)

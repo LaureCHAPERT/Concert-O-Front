@@ -1,3 +1,4 @@
+import jwt from 'jwt-decode';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -39,11 +40,17 @@ const SearchBar = ({
 
   const genreID = useSelector((state) => state.genres.selectedGenreID);
   const regionID = useSelector((state) => state.regions.selectedRegionID);
+  const token = useSelector((state) => state.user.token);
 
   const callPhrase = () => {
     let catchPhrase;
-    if (message === 'hello') {
+    if (message === 'hello' && token == null) {
       catchPhrase = 'Bienvenue sur Concert\'o';
+    }
+    else if (message === 'hello' && token !== null) {
+      const user = localStorage.getItem('token');
+      const userDecode = jwt(user);
+      catchPhrase = `Bienvenue sur Concert'o ${userDecode.username}`;
     }
     else {
       catchPhrase = ` ${results} concert(s) trouvés `;
