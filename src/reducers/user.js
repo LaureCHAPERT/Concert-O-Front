@@ -1,11 +1,16 @@
-import { CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER_DATA } from '../actions/user';
+import {
+  CHANGE_EMAIL,
+  CHANGE_PASSWORD,
+  SAVE_USER_DATA,
+  LOG_OUT,
+} from '../actions/user';
 
 export const initialState = {
 
   email: '',
   password: '',
   username: '',
-  token: null,
+  token: localStorage.getItem('token'),
   errorMessage: '',
 };
 
@@ -26,6 +31,12 @@ const user = (state = initialState, action = {}) => {
         ...state,
         username: action.nickname,
         token: action.token,
+      };
+    case LOG_OUT:
+      localStorage.removeItem('token');
+      return {
+        ...state,
+        token: localStorage.getItem('token'),
       };
     default:
       return state;

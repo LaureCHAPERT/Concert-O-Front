@@ -33,7 +33,7 @@ const userMiddleware = (store) => (next) => (action) => {
           console.log(error);
         });
       break;
-
+      // TODO  CASE LOG_OUT
     default:
       break;
   }

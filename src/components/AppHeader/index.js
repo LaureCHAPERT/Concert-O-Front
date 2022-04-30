@@ -14,33 +14,21 @@ import logo from 'src/assets/images/logo.png';
 import { fetchAllEvents } from '../../actions/events';
 import { setSelectedRegionId } from '../../actions/regions';
 import { setSelectedGenreId } from '../../actions/genres';
-import { changeEmail, changePassword, logIn } from '../../actions/user';
+import {
+  changeEmail,
+  changePassword,
+  logIn,
+  logOut,
+} from '../../actions/user';
 import './appHeader.scss';
 
 const AppHeader = () => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const token = useSelector((state) => state.user.token);
   const emailValue = useSelector((state) => state.user.email);
   const passwordValue = useSelector((state) => state.user.password);
-  // const token = localStorage.getItem('token');
-  const token = useSelector((state) => state.user.token);
-  const callLogin = () => {
-    let isLogged;
-    if (token === null) {
-      isLogged = 'Se connecter';
-    }
-    else {
-      isLogged = 'Se déconnecter';
-    }
-    return isLogged;
-  };
-  const handleClose = () => setShow(false);
-  const handleOpen = () => setShow(true);
-  const logOut = () => {
-    // localStorage.clear();
-    localStorage.setItem('token', null);
-    window.location.href = '/';
-  };
+
   return (
     <div>
       <Navbar id="mainNav" expand="lg">
@@ -89,16 +77,16 @@ const AppHeader = () => {
                     dispatch(logOut());
                   }
                   else {
-                    dispatch(handleOpen());
+                    setShow(true);
                   }
                 }}
-              >{callLogin()}
+              >{!token ? 'Se connecter' : 'Se Déconnecter'}
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={() => setShow(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Me connecter</Modal.Title>
         </Modal.Header>
@@ -139,7 +127,7 @@ const AppHeader = () => {
             variant="secondary"
             onClick={() => {
               dispatch(logIn());
-              dispatch(handleClose());
+              setShow(false);
             }}
           >
             Valider
@@ -147,7 +135,7 @@ const AppHeader = () => {
           <LinkContainer
             to="/inscription"
           >
-            <Button onClick={handleClose} variant="primary">
+            <Button onClick={() => setShow(false)} variant="primary">
               Pas encore inscrit ? Cliquez ici
             </Button>
           </LinkContainer>

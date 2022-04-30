@@ -9,8 +9,8 @@ import userMiddleware from '../middlewares/userMiddleware';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancers = composeEnhancers(
   applyMiddleware(
-    genresMiddleware,
     eventsMiddleware,
+    genresMiddleware,
     userMiddleware,
     regionsMiddleware,
   ),

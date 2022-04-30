@@ -20,7 +20,6 @@ const initialState = {
 };
 
 const events = (state = initialState, action = {}) => {
-  // console.log(`the events reducer received an action ${action.type}`);
   switch (action.type) {
     case SAVE_EVENTS_BY_GENRE:
       return {

@@ -44,7 +44,7 @@ const SearchBar = ({
 
   const callPhrase = () => {
     let catchPhrase;
-    if (message === 'hello' && token == null) {
+    if (message === 'hello' && token === null) {
       catchPhrase = 'Bienvenue sur Concert\'o';
     }
     else if (message === 'hello' && token !== null) {
