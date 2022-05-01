@@ -4,6 +4,7 @@ export const CHANGE_EMAIL = 'CHANGE_EMAIL';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
+export const AUTH_FAILED = 'AUTH_FAILED';
 export const changePassword = (newValue) => ({
   type: CHANGE_PASSWORD,
   value: newValue,
@@ -22,4 +23,8 @@ export const saveUserData = (nickname, token) => ({
   type: SAVE_USER_DATA,
   nickname: nickname,
   token: token,
+});
+export const authFailed = (errorMessage) => ({
+  type: AUTH_FAILED,
+  errorMessage: errorMessage,
 });

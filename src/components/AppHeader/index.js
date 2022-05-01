@@ -6,6 +6,7 @@ import {
   Modal,
   Button,
   Form,
+  Alert,
 } from 'react-bootstrap';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -28,7 +29,8 @@ const AppHeader = () => {
   const token = useSelector((state) => state.user.token);
   const emailValue = useSelector((state) => state.user.email);
   const passwordValue = useSelector((state) => state.user.password);
-
+  const errorMessage = useSelector((state) => state.user.errorMessage);
+  console.log(errorMessage);
   return (
     <div>
       <Navbar id="mainNav" expand="lg">
@@ -90,6 +92,7 @@ const AppHeader = () => {
         <Modal.Header closeButton>
           <Modal.Title>Me connecter</Modal.Title>
         </Modal.Header>
+        { errorMessage !== '' && <Alert variant="danger">{errorMessage}</Alert> }
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -127,7 +130,10 @@ const AppHeader = () => {
             variant="secondary"
             onClick={() => {
               dispatch(logIn());
-              setShow(false);
+              console.log(errorMessage);
+              /* if (errorMessage === '') {
+                setShow(false);
+              } */
             }}
           >
             Valider

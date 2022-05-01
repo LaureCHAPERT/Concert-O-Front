@@ -3,6 +3,7 @@ import {
   CHANGE_PASSWORD,
   SAVE_USER_DATA,
   LOG_OUT,
+  AUTH_FAILED,
 } from '../actions/user';
 
 export const initialState = {
@@ -37,6 +38,11 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         token: localStorage.getItem('token'),
+      };
+    case AUTH_FAILED:
+      return {
+        ...state,
+        errorMessage: action.errorMessage,
       };
     default:
       return state;

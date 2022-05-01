@@ -1,7 +1,7 @@
 import axios from 'axios';
 import jwt from 'jwt-decode';
 
-import { LOG_IN, saveUserData } from '../actions/user';
+import { LOG_IN, saveUserData, authFailed } from '../actions/user';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -26,14 +26,14 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveUserData(user.username, response.data.token));
         })
         .catch((error) => {
-          const message = store.getState().user.errorMessage;
-          // eslint-disable-next-line max-len
-          // this.setState({ errorMessage: 'Votre e-mail ou votre mot de passe comporte une erreur ' });
-          console.log(message);
-          console.log(error);
+          console.log(error.response.status);
+          if (error.response.status === 401) {
+            const errorMessage = 'Nom d\'utilisateur ou mot de passe incorrect, veuillez corrigez les informations saisies';
+            store.dispatch(authFailed(errorMessage));
+          }
         });
       break;
-      // TODO  CASE LOG_OUT
+
     default:
       break;
   }
