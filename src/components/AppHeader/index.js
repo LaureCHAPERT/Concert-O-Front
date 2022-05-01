@@ -8,7 +8,7 @@ import {
   Form,
   Alert,
 } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 import logo from 'src/assets/images/logo.png';
@@ -30,7 +30,13 @@ const AppHeader = () => {
   const emailValue = useSelector((state) => state.user.email);
   const passwordValue = useSelector((state) => state.user.password);
   const errorMessage = useSelector((state) => state.user.errorMessage);
-  console.log(errorMessage);
+
+  useEffect(() => {
+    if (errorMessage === '') {
+      setShow(false);
+    }
+  }, [errorMessage, token]);
+
   return (
     <div>
       <Navbar id="mainNav" expand="lg">
@@ -103,7 +109,6 @@ const AppHeader = () => {
                 autoFocus
                 email={emailValue}
                 onChange={(event) => {
-                  // console.log(event.target.value);
                   dispatch(changeEmail(event.target.value));
                 }}
               />
@@ -117,7 +122,6 @@ const AppHeader = () => {
                 type="password"
                 password={passwordValue}
                 onChange={(event) => {
-                  // console.log(event.target.value);
                   dispatch(changePassword(event.target.value));
                 }}
 
@@ -130,10 +134,6 @@ const AppHeader = () => {
             variant="secondary"
             onClick={() => {
               dispatch(logIn());
-              console.log(errorMessage);
-              /* if (errorMessage === '') {
-                setShow(false);
-              } */
             }}
           >
             Valider

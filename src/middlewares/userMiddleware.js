@@ -1,7 +1,7 @@
 import axios from 'axios';
 import jwt from 'jwt-decode';
 
-import { LOG_IN, saveUserData, authFailed } from '../actions/user';
+import { LOG_IN, saveUserData, setErrorMessage } from '../actions/user';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -20,16 +20,15 @@ const userMiddleware = (store) => (next) => (action) => {
           // eslint-disable-next-line prefer-destructuring
           const token = response.data.token;
           const user = jwt(token);
-          // console.log(user.username);
+          console.log(user);
           localStorage.setItem('token', token);
-          // console.log(localStorage);
           store.dispatch(saveUserData(user.username, response.data.token));
+          store.dispatch(setErrorMessage(''));
         })
         .catch((error) => {
-          console.log(error.response.status);
           if (error.response.status === 401) {
             const errorMessage = 'Nom d\'utilisateur ou mot de passe incorrect, veuillez corrigez les informations saisies';
-            store.dispatch(authFailed(errorMessage));
+            store.dispatch(setErrorMessage(errorMessage));
           }
         });
       break;
