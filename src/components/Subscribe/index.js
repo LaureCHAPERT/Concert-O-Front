@@ -27,10 +27,10 @@ const Subscribe = () => {
         <h2 className="subscribe-title">S'inscrire</h2>
         <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>Pseudo</Form.Label>
+            <Form.Label>Identifiant</Form.Label>
             <Form.Control
               type="pseudo"
-              placeholder="Goku"
+              placeholder="Anthony"
               pseudo={username}
               onChange={(event) => {
                 dispatch(changePseudo(event.target.value));
