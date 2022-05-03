@@ -1,0 +1,16 @@
+@use 'src/styles/vars';
+
+
+.subscribe-form{
+  background-color: vars.$backgroundColor !important;
+  margin: 5%;
+  padding: 5%;
+}
+.subscribe-title{
+  padding-bottom: 3%;
+}
+
+.form-control {
+  margin-bottom: 1.5em;;
+}
+

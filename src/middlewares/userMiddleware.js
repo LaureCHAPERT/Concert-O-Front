@@ -4,7 +4,8 @@ import jwt from 'jwt-decode';
 import {
   LOG_IN,
   saveUserData,
-  setErrorMessage,
+  setFlashMessageForConnexion,
+  setFlashMessageForSubscribe,
   CREATE_USER,
 } from '../actions/user';
 
@@ -28,12 +29,12 @@ const userMiddleware = (store) => (next) => (action) => {
           console.log(user);
           localStorage.setItem('token', token);
           store.dispatch(saveUserData(user.username, response.data.token));
-          store.dispatch(setErrorMessage(''));
+          store.dispatch(setFlashMessageForConnexion(''));
         })
         .catch((error) => {
           if (error.response.status === 401) {
             const errorMessage = 'Nom d\'utilisateur ou mot de passe incorrect, veuillez corrigez les informations saisies';
-            store.dispatch(setErrorMessage(errorMessage));
+            store.dispatch(setFlashMessageForConnexion(errorMessage));
           }
         });
       break;
@@ -52,6 +53,10 @@ const userMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           // eslint-disable-next-line prefer-destructuring
           console.log(response);
+          if (response.status === 201) {
+            const validationMessage = 'Your account has been successfully created';
+            store.dispatch(setFlashMessageForSubscribe(validationMessage));
+          }
         })
         .catch((error) => {
           console.log(error);

@@ -5,7 +5,8 @@ export const CHANGE_PSEUDO = 'CHANGE_PSEUDO';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
-export const SET_ERROR_MESSAGE = 'SET_ERROR_MESSAGE';
+export const SET_FLASH_MESSAGE_FOR_SUBSCRIBE = 'SET_FLASH_MESSAGE_FOR_SUBSCRIBE';
+export const SET_FLASH_MESSAGE_FOR_CONNEXION = 'SET_FLASH_MESSAGE_FOR_CONNEXION';
 export const CREATE_USER = 'CREATE_USER';
 export const changePassword = (newValue) => ({
   type: CHANGE_PASSWORD,
@@ -30,9 +31,13 @@ export const saveUserData = (nickname, token) => ({
   nickname: nickname,
   token: token,
 });
-export const setErrorMessage = (errorMessage) => ({
-  type: SET_ERROR_MESSAGE,
-  errorMessage: errorMessage,
+export const setFlashMessageForSubscribe = (flashMessage) => ({
+  type: SET_FLASH_MESSAGE_FOR_SUBSCRIBE,
+  flashMessage: flashMessage,
+});
+export const setFlashMessageForConnexion = (flashMessage) => ({
+  type: SET_FLASH_MESSAGE_FOR_CONNEXION,
+  flashMessage: flashMessage,
 });
 export const createUser = () => ({
   type: CREATE_USER,

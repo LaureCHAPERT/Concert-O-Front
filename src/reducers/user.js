@@ -3,7 +3,8 @@ import {
   CHANGE_PASSWORD,
   SAVE_USER_DATA,
   LOG_OUT,
-  SET_ERROR_MESSAGE,
+  SET_FLASH_MESSAGE_FOR_CONNEXION,
+  SET_FLASH_MESSAGE_FOR_SUBSCRIBE,
   CHANGE_PSEUDO,
 } from '../actions/user';
 
@@ -13,6 +14,7 @@ export const initialState = {
   password: '',
   username: '',
   token: localStorage.getItem('token'),
+  flashMessage: '',
   errorMessage: '',
 };
 
@@ -45,10 +47,15 @@ const user = (state = initialState, action = {}) => {
         ...state,
         token: localStorage.getItem('token'),
       };
-    case SET_ERROR_MESSAGE:
+    case SET_FLASH_MESSAGE_FOR_CONNEXION:
       return {
         ...state,
-        errorMessage: action.errorMessage,
+        errorMessage: action.flashMessage,
+      };
+    case SET_FLASH_MESSAGE_FOR_SUBSCRIBE:
+      return {
+        ...state,
+        flashMessage: action.flashMessage,
       };
     default:
       return state;
