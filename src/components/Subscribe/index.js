@@ -23,7 +23,7 @@ const Subscribe = () => {
   return (
     <div>
       <div className="subscribe-form">
-        { flashMessage !== '' && <Alert variant="sucess">{flashMessage}</Alert> }
+        { flashMessage !== '' && <Alert variant="success">{flashMessage}</Alert> }
         <h2 className="subscribe-title">S'inscrire</h2>
         <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

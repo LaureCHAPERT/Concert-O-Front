@@ -54,7 +54,7 @@ const userMiddleware = (store) => (next) => (action) => {
           // eslint-disable-next-line prefer-destructuring
           console.log(response);
           if (response.status === 201) {
-            const validationMessage = 'Your account has been successfully created';
+            const validationMessage = 'Votre compte a bien été créé. Veuillez vous connecter';
             store.dispatch(setFlashMessageForSubscribe(validationMessage));
           }
         })
