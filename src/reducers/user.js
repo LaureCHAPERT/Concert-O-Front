@@ -4,6 +4,7 @@ import {
   SAVE_USER_DATA,
   LOG_OUT,
   SET_ERROR_MESSAGE,
+  CHANGE_PSEUDO,
 } from '../actions/user';
 
 export const initialState = {
@@ -26,6 +27,11 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         password: action.value,
+      };
+    case CHANGE_PSEUDO:
+      return {
+        ...state,
+        username: action.value,
       };
     case SAVE_USER_DATA:
       return {
