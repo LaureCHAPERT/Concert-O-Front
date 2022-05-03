@@ -7,6 +7,7 @@ import {
   changeEmail,
   changePassword,
   changePseudo,
+  createUser,
 } from '../../actions/user';
 
 // import styles
@@ -54,7 +55,12 @@ const Subscribe = () => {
           />
         </Form.Group>
       </Form>
-      <Button variant="primary">
+      <Button
+        variant="primary"
+        onClick={() => {
+          dispatch(createUser());
+        }}
+      >
         Valider
       </Button>
     </div>

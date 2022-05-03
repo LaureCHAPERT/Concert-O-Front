@@ -1,7 +1,12 @@
 import axios from 'axios';
 import jwt from 'jwt-decode';
 
-import { LOG_IN, saveUserData, setErrorMessage } from '../actions/user';
+import {
+  LOG_IN,
+  saveUserData,
+  setErrorMessage,
+  CREATE_USER,
+} from '../actions/user';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -32,7 +37,26 @@ const userMiddleware = (store) => (next) => (action) => {
           }
         });
       break;
-
+    case CREATE_USER:
+      axios.post(
+        // URL
+        'http://laure-chapert.vpnuser.lan:8000/api/user/create',
+        // données
+        {
+          // ne pas oublier le nom du tiroir ;)
+          email: store.getState().user.email,
+          password: store.getState().user.password,
+          username: store.getState().user.username,
+        },
+      )
+        .then((response) => {
+          // eslint-disable-next-line prefer-destructuring
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
     default:
       break;
   }

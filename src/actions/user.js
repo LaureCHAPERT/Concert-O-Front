@@ -6,6 +6,7 @@ export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const SET_ERROR_MESSAGE = 'SET_ERROR_MESSAGE';
+export const CREATE_USER = 'CREATE_USER';
 export const changePassword = (newValue) => ({
   type: CHANGE_PASSWORD,
   value: newValue,
@@ -32,4 +33,7 @@ export const saveUserData = (nickname, token) => ({
 export const setErrorMessage = (errorMessage) => ({
   type: SET_ERROR_MESSAGE,
   errorMessage: errorMessage,
+});
+export const createUser = () => ({
+  type: CREATE_USER,
 });
