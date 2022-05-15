@@ -12,6 +12,8 @@ import { setSelectedGenreId } from '../../actions/genres';
 
 const EventDetail = () => {
   const { eventDetail } = useSelector((state) => state.events);
+  const { genres } = useSelector((state) => state.events.eventDetail);
+  console.log(genres);
   const dispatch = useDispatch();
 
   const date = new Date(eventDetail.date);
@@ -45,17 +47,20 @@ const EventDetail = () => {
           }}
         ><Badge pill bg="secondary">{eventDetail.region.name}</Badge>
         </LinkContainer>
-        <LinkContainer
-          style={{ cursor: 'pointer' }}
-          to="/resultats-evenements"
-          onClick={() => {
-            dispatch(fetchEventsByGenre(eventDetail.genres[0].id));
-            dispatch(setSelectedGenreId(eventDetail.genres[0].id));
-            dispatch(setSelectedRegionId());
-          }}
-        >
-          <Badge pill>{eventDetail.genres[0].name}</Badge>
-        </LinkContainer>
+        {genres.map((genre) => (
+          <LinkContainer
+            key={genre.id}
+            style={{ cursor: 'pointer' }}
+            to="/resultats-evenements"
+            onClick={() => {
+              dispatch(fetchEventsByGenre(eventDetail.genres[0].id));
+              dispatch(setSelectedGenreId(eventDetail.genres[0].id));
+              dispatch(setSelectedRegionId());
+            }}
+          >
+            <Badge pill key={genre.id}>{genre.name}</Badge>
+          </LinkContainer>
+        ))}
       </div>
       <div className="date">{formatDate}</div> <div>{formatHour}</div>
       <div className="price">{eventDetail.price}€</div>
