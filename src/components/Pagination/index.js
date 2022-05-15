@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 // import { LinkContainer } from 'react-router-bootstrap';
 import './pagination.scss';
-
+// tutorial link
+// https://www.youtube.com/watch?v=IYCa1F-OWmk&t=977s
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   const pageNumbers = [];
   // eslint-disable-next-line no-plusplus
