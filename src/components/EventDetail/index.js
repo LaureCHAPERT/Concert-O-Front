@@ -53,8 +53,8 @@ const EventDetail = () => {
             style={{ cursor: 'pointer' }}
             to="/resultats-evenements"
             onClick={() => {
-              dispatch(fetchEventsByGenre(eventDetail.genres[0].id));
-              dispatch(setSelectedGenreId(eventDetail.genres[0].id));
+              dispatch(fetchEventsByGenre(genre.id));
+              dispatch(setSelectedGenreId(genre.id));
               dispatch(setSelectedRegionId());
             }}
           >
