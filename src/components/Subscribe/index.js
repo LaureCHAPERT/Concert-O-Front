@@ -65,12 +65,20 @@ const Subscribe = () => {
         <Button
           variant="primary"
           onClick={() => {
+            // eslint-disable-next-line prefer-regex-literals
+            // const regex = new RegExp(/^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$/);
+            // const pattern = regex.test(passwordValue);
+            // console.log(pattern);
+            // console.log(passwordValue);
             if (username === '' || passwordValue === '' || emailValue === '') {
               setErrorMessage('Veuillez renseigner tous les champs');
             }
-            else {
+            else if (passwordValue.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
               dispatch(createUser());
               setErrorMessage('');
+            }
+            else {
+              setErrorMessage('Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial');
             }
           }}
         >
