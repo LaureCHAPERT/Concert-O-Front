@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Form,
   Button,
@@ -19,11 +20,13 @@ const Subscribe = () => {
   const passwordValue = useSelector((state) => state.user.password);
   const username = useSelector((state) => state.user.username);
   const flashMessage = useSelector((state) => state.user.flashMessage);
+  const [errorMessage, setErrorMessage] = useState('');
   const dispatch = useDispatch();
   return (
     <div>
       <div className="subscribe-form">
         { flashMessage !== '' && <Alert variant="success">{flashMessage}</Alert> }
+        { errorMessage !== '' && <Alert variant="danger">{errorMessage}</Alert> }
         <h2 className="subscribe-title">S'inscrire</h2>
         <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -62,7 +65,21 @@ const Subscribe = () => {
         <Button
           variant="primary"
           onClick={() => {
-            dispatch(createUser());
+            // eslint-disable-next-line prefer-regex-literals
+            // const regex = new RegExp(/^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$/);
+            // const pattern = regex.test(passwordValue);
+            // console.log(pattern);
+            // console.log(passwordValue);
+            if (username === '' || passwordValue === '' || emailValue === '') {
+              setErrorMessage('Veuillez renseigner tous les champs');
+            }
+            else if (passwordValue.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
+              dispatch(createUser());
+              setErrorMessage('');
+            }
+            else {
+              setErrorMessage('Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial');
+            }
           }}
         >
           Valider
