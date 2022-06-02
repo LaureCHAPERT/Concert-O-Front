@@ -1,5 +1,6 @@
 // changer la valeur de l'un des champs du formulaire de login
 export const CHANGE_PASSWORD = 'CHANGE_PASSWORD';
+export const CHANGE_PASSWORD_CONFIRMATION = 'CHANGE_PASSWORD_CONFIRMATION';
 export const CHANGE_EMAIL = 'CHANGE_EMAIL';
 export const CHANGE_PSEUDO = 'CHANGE_PSEUDO';
 export const LOG_IN = 'LOG_IN';
@@ -10,6 +11,10 @@ export const SET_FLASH_MESSAGE_FOR_CONNEXION = 'SET_FLASH_MESSAGE_FOR_CONNEXION'
 export const CREATE_USER = 'CREATE_USER';
 export const changePassword = (newValue) => ({
   type: CHANGE_PASSWORD,
+  value: newValue,
+});
+export const changePasswordConfirmation = (newValue) => ({
+  type: CHANGE_PASSWORD_CONFIRMATION,
   value: newValue,
 });
 export const changeEmail = (newValue) => ({

@@ -1,6 +1,7 @@
 import {
   CHANGE_EMAIL,
   CHANGE_PASSWORD,
+  CHANGE_PASSWORD_CONFIRMATION,
   SAVE_USER_DATA,
   LOG_OUT,
   SET_FLASH_MESSAGE_FOR_CONNEXION,
@@ -12,6 +13,7 @@ export const initialState = {
 
   email: '',
   password: '',
+  passwordConfirmation: '',
   username: '',
   token: localStorage.getItem('token'),
   flashMessage: '',
@@ -29,6 +31,11 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         password: action.value,
+      };
+    case CHANGE_PASSWORD_CONFIRMATION:
+      return {
+        ...state,
+        passwordConfirmation: action.value,
       };
     case CHANGE_PSEUDO:
       return {

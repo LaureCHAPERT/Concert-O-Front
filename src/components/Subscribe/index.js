@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   changeEmail,
   changePassword,
+  changePasswordConfirmation,
   changePseudo,
   createUser,
 } from '../../actions/user';
@@ -18,6 +19,7 @@ import './subscribe.scss';
 const Subscribe = () => {
   const emailValue = useSelector((state) => state.user.email);
   const passwordValue = useSelector((state) => state.user.password);
+  const passwordConfirmationValue = useSelector((state) => state.user.passwordConfirmation);
   const username = useSelector((state) => state.user.username);
   const flashMessage = useSelector((state) => state.user.flashMessage);
   const [errorMessage, setErrorMessage] = useState('');
@@ -61,6 +63,16 @@ const Subscribe = () => {
               }}
             />
           </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
+            <Form.Label>Confirmation du mot de passe </Form.Label>
+            <Form.Control
+              type="password"
+              passwordConfirmation={passwordConfirmationValue}
+              onChange={(event) => {
+                dispatch(changePasswordConfirmation(event.target.value));
+              }}
+            />
+          </Form.Group>
         </Form>
         <Button
           variant="primary"
@@ -72,6 +84,9 @@ const Subscribe = () => {
             // console.log(passwordValue);
             if (username === '' || passwordValue === '' || emailValue === '') {
               setErrorMessage('Veuillez renseigner tous les champs');
+            }
+            else if (passwordValue !== passwordConfirmationValue) {
+              setErrorMessage('Le champ de confirmation du mot de passe doit correspondre au mot de passe initial');
             }
             else if (passwordValue.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
               dispatch(createUser());
