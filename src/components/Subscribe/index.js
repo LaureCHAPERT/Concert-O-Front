@@ -82,13 +82,13 @@ const Subscribe = () => {
             // const pattern = regex.test(passwordValue);
             // console.log(pattern);
             // console.log(passwordValue);
-            if (username === '' || passwordValue === '' || emailValue === '') {
+            if (username === '' || passwordValue === '' || emailValue === '' || passwordConfirmationValue === '') {
               setErrorMessage('Veuillez renseigner tous les champs');
             }
             else if (passwordValue !== passwordConfirmationValue) {
               setErrorMessage('Le champ de confirmation du mot de passe doit correspondre au mot de passe initial');
             }
-            else if (passwordValue.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
+            else if (passwordConfirmationValue.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
               dispatch(createUser());
               setErrorMessage('');
             }

@@ -26,7 +26,7 @@ const userMiddleware = (store) => (next) => (action) => {
           // eslint-disable-next-line prefer-destructuring
           const token = response.data.token;
           const user = jwt(token);
-          console.log(user);
+          // console.log(user);
           localStorage.setItem('token', token);
           store.dispatch(saveUserData(user.username, response.data.token));
           store.dispatch(setFlashMessageForConnexion(''));
