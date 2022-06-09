@@ -1,0 +1,39 @@
+@use 'src/styles/vars';
+
+
+#eventDetail{
+  margin-bottom: 2em;
+  margin-top: 2em; 
+  padding: 1em;
+  text-align: center;
+}
+h2{
+  color: vars.$fontColor;
+  margin-right:1em;
+}
+#eventDetail{
+  background-color: vars.$backgroundColor;
+  &:not(.disable):hover{
+    transition: none; 
+    border-radius: unset !important;
+    transform: none;
+  }
+}
+.badge{
+  margin:0.5em;
+  font-size: 1em !important;
+}
+.detailImg{
+  margin:auto;
+  width: -webkit-fill-available;
+  margin: 3%;
+  max-height: 60%;
+  min-height: 60%;
+  object-fit: cover;
+}
+.genre-badge{
+  color: vars.$backgroundColor
+}
+.date {
+  text-transform: capitalize;
+}

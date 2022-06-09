@@ -1,0 +1,42 @@
+@use 'src/styles/vars';
+.card {
+  background-color: vars.$backgroundColor !important;
+  font-weight: bolder;
+  box-shadow: 2px 2px 0.5px rgba(128, 128, 128, 0.568);
+  margin:1em;
+  color:black;
+
+}
+.card:hover{
+  transition: all 0.3s; 
+  border-radius: 2rem !important;
+  transform: scale(1.03);
+  .events-img{
+      transition: all 0.3s; 
+      border-radius: 2rem 2rem 0rem 0rem !important;
+  }
+}
+.events-button{
+  margin-top: 1rem;
+  position: absolute;
+  bottom: 3%; left: 3%;
+}
+.events-card{
+  min-width: 33%;
+  padding-bottom: 10%;
+
+}
+.events-img{
+  opacity: 100%;
+  object-fit: cover;
+  max-height: 15em;
+  min-height: 15em;
+}
+
+.events-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+}

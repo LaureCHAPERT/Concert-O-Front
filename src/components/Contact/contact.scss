@@ -1,0 +1,35 @@
+@use 'src/styles/vars';
+
+.contact-card{
+  margin: 4%;
+}
+.contact-form{
+  background-color: vars.$backgroundColor !important;
+  margin: 5%;
+  padding: 5%;
+}
+.contact-title{
+  padding-bottom: 3%;
+}
+.contact-img{
+  height: 15em;
+}
+.form-control {
+  margin-bottom: 1.5em;;
+}
+.presentation-div {
+  background-color: vars.$backgroundColor !important;
+  margin-left : 33%;
+  margin-right: 33%;
+  padding: 0.5em;
+  border: 3px solid vars.$backgroundColor !important;;
+  border-radius: 20px;
+}
+#presentation {
+  color: vars.$fontColor !important;
+  font-weight: bolder;
+  font-size:1.3em;
+  text-align: center;
+  
+  
+}

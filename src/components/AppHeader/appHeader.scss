@@ -1,0 +1,21 @@
+@use 'src/styles/vars';
+
+#mainNav{
+  background-color: vars.$backgroundColor;
+}
+.navbar-title{
+  color: vars.$fontColor !important;
+  margin-right: 0.5em;
+  margin-bottom: 0em;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.navlink-header {
+  color: vars.$fontColor !important;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1em;
+  margin-top:0.5em;
+}  
+
